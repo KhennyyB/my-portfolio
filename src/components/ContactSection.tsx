@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Mail, Linkedin, MapPin, Send, Loader2 } from "lucide-react";
 
 const ContactSection = () => {
@@ -27,25 +28,44 @@ const ContactSection = () => {
       return;
     }
 
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoading(true);
     
-    // Simulate form submission - in production, connect to backend
     try {
-      // Create mailto link as fallback
-      const mailtoLink = `mailto:khennyphresh@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-      
-      window.open(mailtoLink, '_blank');
-      
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        },
+      });
+
+      if (error) {
+        console.error("Error sending email:", error);
+        throw new Error(error.message || "Failed to send message");
+      }
+
       toast({
-        title: "Opening email client...",
-        description: "Your message is ready to send!",
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
       });
       
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Error:", error);
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
+        title: "Error sending message",
+        description: error.message || "Something went wrong. Please try again or email me directly.",
         variant: "destructive",
       });
     } finally {
@@ -156,6 +176,7 @@ const ContactSection = () => {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className="bg-secondary border-border focus:border-primary"
+                          maxLength={100}
                         />
                       </div>
                       <div className="space-y-2">
@@ -169,6 +190,7 @@ const ContactSection = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="bg-secondary border-border focus:border-primary"
+                          maxLength={255}
                         />
                       </div>
                     </div>
@@ -184,6 +206,7 @@ const ContactSection = () => {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="bg-secondary border-border focus:border-primary resize-none"
+                        maxLength={2000}
                       />
                     </div>
 
