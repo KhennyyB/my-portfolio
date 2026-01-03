@@ -1,32 +1,24 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, GraduationCap, Award, Target } from "lucide-react";
-
 const AboutSection = () => {
-  const highlights = [
-    {
-      icon: Briefcase,
-      title: "Enterprise Analyst",
-      description: "Currently at Iwosan Lagoon Hospitals, driving data-driven decisions",
-    },
-    {
-      icon: GraduationCap,
-      title: "Certified Professional",
-      description: "ALX Africa Certified Data Analyst & Software Engineer",
-    },
-    {
-      icon: Award,
-      title: "Proven Results",
-      description: "15% efficiency increase through data analysis insights",
-    },
-    {
-      icon: Target,
-      title: "Business Impact",
-      description: "30% reduction in data errors through process optimization",
-    },
-  ];
-
-  return (
-    <section id="about" className="py-20 md:py-32 relative">
+  const highlights = [{
+    icon: Briefcase,
+    title: "Enterprise Analyst",
+    description: "Currently at Iwosan Lagoon Hospitals, driving data-driven decisions"
+  }, {
+    icon: GraduationCap,
+    title: "Certified Professional",
+    description: "ALX Africa Certified Data Analyst & Software Engineer"
+  }, {
+    icon: Award,
+    title: "Proven Results",
+    description: "15% efficiency increase through data analysis insights"
+  }, {
+    icon: Target,
+    title: "Business Impact",
+    description: "30% reduction in data errors through process optimization"
+  }];
+  return <section id="about" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -63,25 +55,17 @@ const AboutSection = () => {
                   <span className="w-2 h-2 bg-primary rounded-full" />
                   <span className="text-muted-foreground">Lagos, Nigeria</span>
                 </div>
+                
                 <div className="flex items-center gap-2 text-sm">
-                  <span className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="text-muted-foreground">B.Sc, Nnamdi Azikiwe University</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="text-muted-foreground">Holberton School Graduate</span>
+                  
+                  
                 </div>
               </div>
             </div>
 
             {/* Right content - Cards */}
             <div className="grid sm:grid-cols-2 gap-4">
-              {highlights.map((item, index) => (
-                <Card
-                  key={index}
-                  variant="glow"
-                  className="group cursor-default"
-                >
+              {highlights.map((item, index) => <Card key={index} variant="glow" className="group cursor-default">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                       <item.icon className="w-6 h-6 text-primary" />
@@ -89,14 +73,11 @@ const AboutSection = () => {
                     <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
