@@ -1,72 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  FileSpreadsheet, 
-  Database, 
-  BarChart3, 
-  LineChart,
-  ExternalLink,
-  TrendingUp,
-  Users,
-  DollarSign,
-  ShoppingCart
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { projects } from "@/data/projectsData";
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "Sales Performance Dashboard",
-      description: "Comprehensive Excel dashboard analyzing sales performance across multiple regions with KPIs, trend analysis, and forecasting. Enabled real-time monitoring of revenue metrics and identified underperforming segments.",
-      tools: ["Excel", "Pivot Tables", "Charts", "Conditional Formatting"],
-      icon: FileSpreadsheet,
-      color: "from-emerald-500 to-green-600",
-      insights: [
-        "20% reduction in reporting time",
-        "Identified 3 key growth opportunities",
-        "Automated monthly KPI tracking"
-      ],
-      metric: { icon: TrendingUp, value: "25%", label: "Revenue Growth Tracked" },
-    },
-    {
-      title: "Customer Behavior Analysis",
-      description: "SQL-based analysis of customer purchase patterns using complex joins, CTEs, and aggregations. Uncovered key insights about customer lifetime value, churn prediction, and purchasing trends.",
-      tools: ["SQL", "CTEs", "Joins", "Aggregations"],
-      icon: Database,
-      color: "from-blue-500 to-cyan-600",
-      insights: [
-        "Segmented 10,000+ customers",
-        "Identified high-value customer profiles",
-        "Reduced churn by targeting at-risk users"
-      ],
-      metric: { icon: Users, value: "10K+", label: "Customers Analyzed" },
-    },
-    {
-      title: "Business Intelligence Dashboard",
-      description: "Interactive Power BI dashboard providing executive-level insights into operational efficiency, financial metrics, and departmental KPIs. Features drill-down capabilities and automated data refresh.",
-      tools: ["Power BI", "DAX", "Data Modeling", "Visualization"],
-      icon: BarChart3,
-      color: "from-amber-500 to-orange-600",
-      insights: [
-        "Real-time data monitoring",
-        "Executive decision support",
-        "Cross-departmental visibility"
-      ],
-      metric: { icon: DollarSign, value: "15%", label: "Efficiency Increase" },
-    },
-    {
-      title: "E-commerce Analytics Report",
-      description: "Story-driven data visualization project analyzing e-commerce performance, customer journey, and conversion funnels. Created compelling visual narratives for stakeholder presentations.",
-      tools: ["Data Visualization", "Excel", "Storytelling", "Charts"],
-      icon: LineChart,
-      color: "from-purple-500 to-pink-600",
-      insights: [
-        "Mapped complete customer journey",
-        "Identified conversion bottlenecks",
-        "Increased checkout rate insights"
-      ],
-      metric: { icon: ShoppingCart, value: "30%", label: "Conversion Insights" },
-    },
-  ];
+  const navigate = useNavigate();
 
   return (
     <section id="projects" className="py-20 md:py-32 relative">
@@ -91,7 +30,8 @@ const ProjectsSection = () => {
               <Card
                 key={index}
                 variant="glow"
-                className="group overflow-hidden"
+                className="group overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
+                onClick={() => navigate(`/project/${project.id}`)}
               >
                 <CardContent className="p-0">
                   {/* Header with gradient */}
@@ -112,9 +52,12 @@ const ProjectsSection = () => {
 
                   {/* Content */}
                   <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {project.description}
                     </p>
@@ -142,6 +85,13 @@ const ProjectsSection = () => {
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    {/* View Project Button */}
+                    <div className="pt-2">
+                      <span className="text-sm text-primary font-medium group-hover:underline">
+                        View Full Analysis →
+                      </span>
                     </div>
                   </div>
                 </CardContent>
