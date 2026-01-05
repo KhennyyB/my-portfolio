@@ -1,5 +1,6 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
@@ -12,6 +13,26 @@ const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 
 const Index = () => {
+    const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    let tries = 0;
+    const maxTries = 20;
+    const tryScroll = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      } else if (tries < maxTries) {
+        tries += 1;
+        setTimeout(tryScroll, 50);
+      }
+    };
+    // give router a tick to switch routes first
+    setTimeout(tryScroll, 0);
+  }, [location]);
+
   return (
     <>
       <Helmet>
