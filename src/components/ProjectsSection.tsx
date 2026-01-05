@@ -12,7 +12,7 @@ const ProjectsSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">Portfolio</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Featured <span className="gradient-text text-[#6fa9ec]">Projects</span>
+              Featured <span className="gradient-text text-[#66ffab]">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Real-world data analysis projects demonstrating expertise in Excel, SQL, 
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
                   {/* Header with gradient */}
                   <div className={`bg-gradient-to-br ${project.color} p-6`}>
                     <div className="flex items-center justify-between">
-                      <div className="w-14 h-14 rounded-xl bg-foreground/20 backdrop-blur-sm flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                         <project.icon className="w-7 h-7 text-foreground" />
                       </div>
                       <div className="text-right">
