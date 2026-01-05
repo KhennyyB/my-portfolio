@@ -28,8 +28,8 @@ const ProjectsSection = () => {
                   {/* Header with gradient */}
                   <div className={`bg-white p-6 border-b border-gray-200`}>
                     <div className="flex items-center justify-between">
-                      <div className="w-14 h-14 rounded-xl bg-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                        <project.icon className="w-7 h-7 text-foreground" />
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <project.icon className="w-7 h-7 text-primary" />
                       </div>
                       <div className="text-right">
                         <div className="flex items-center gap-2 text-foreground/90">
