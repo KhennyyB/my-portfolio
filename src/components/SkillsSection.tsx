@@ -97,7 +97,7 @@ const SkillsSection = () => {
             <p className="text-sm text-muted-foreground">Frontend development & collaboration tools</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {additionalSkills.map((skill, index) => <Card key={index} variant="glass" className="group">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
