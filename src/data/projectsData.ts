@@ -138,8 +138,8 @@ export const projectDetailData = {
       { name: "Product E", sales: 22000, units: 550 },
     ],
     kpis: [
-      { label: "Total Revenue", value: "$944K", change: "+12.5%" },
-      { label: "Avg Order Value", value: "$285", change: "+8.2%" },
+      { label: "Total Revenue", value: "₦944K", change: "+12.5%" },
+      { label: "Avg Order Value", value: "₦285", change: "+8.2%" },
       { label: "Customer Retention", value: "78%", change: "+5.1%" },
       { label: "New Customers", value: "1,245", change: "+22.3%" },
     ],

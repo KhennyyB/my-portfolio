@@ -81,7 +81,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
                     <span className="font-medium text-foreground">{segment.segment}</span>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-muted-foreground">Avg Spend: ${segment.avgSpend}</div>
+                    <div className="text-sm text-muted-foreground">Avg Spend: ₦{segment.avgSpend}</div>
                     <div className={`text-xs ${segment.churnRisk > 30 ? 'text-destructive' : 'text-emerald-500'}`}>
                       Churn Risk: {segment.churnRisk}%
                     </div>
@@ -105,7 +105,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="dayOfWeek" stroke="hsl(var(--muted-foreground))" />
                 <YAxis yAxisId="left" stroke="hsl(var(--muted-foreground))" />
-                <YAxis yAxisId="right" orientation="right" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v}`} />
+                <YAxis yAxisId="right" orientation="right" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v}`} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
@@ -133,7 +133,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
               <BarChart data={data.ltv}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="cohort" stroke="hsl(var(--muted-foreground))" />
-                <YAxis yAxisId="left" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v}`} />
+                <YAxis yAxisId="left" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v}`} />
                 <YAxis yAxisId="right" orientation="right" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `${v}%`} />
                 <Tooltip 
                   contentStyle={{ 
@@ -143,7 +143,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
                   }}
                 />
                 <Legend />
-                <Bar yAxisId="left" dataKey="ltv" name="LTV ($)" fill="#10b981" radius={[4, 4, 0, 0]} />
+                <Bar yAxisId="left" dataKey="ltv" name="LTV (₦)" fill="#10b981" radius={[4, 4, 0, 0]} />
                 <Line yAxisId="right" type="monotone" dataKey="retention" name="Retention (%)" stroke="#8b5cf6" strokeWidth={3} />
               </BarChart>
             </ResponsiveContainer>
