@@ -1,4 +1,3 @@
-import React, { lazy, Suspense } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
@@ -13,12 +12,6 @@ import EcommerceAnalyticsDetail from "@/components/projects/EcommerceAnalyticsDe
 import OperationalEfficiencyDetail from "@/components/projects/OperationalEfficiencyDetail";
 import PatientValidationDetail from "@/components/projects/PatientValidationDetail";
 import PatientMonitoringDetail from "@/components/projects/PatientMonitoringDetail";
-
-const LoadingFallback = () => (
-  <div className="py-12 flex items-center justify-center">
-    <div className="text-muted-foreground">Loading project…</div>
-  </div>
-);
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -161,7 +154,7 @@ const ProjectDetail = () => {
       <main className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <Suspense fallback={<LoadingFallback />}>{renderProjectContent()}</Suspense>
+            {renderProjectContent()}
           </div>
         </div>
       </main>
