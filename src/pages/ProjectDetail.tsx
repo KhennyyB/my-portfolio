@@ -76,7 +76,7 @@ const ProjectDetail = () => {
           <div className="flex items-center justify-between">
             <Button 
               variant="ghost" 
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection("/#projects")}
               className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -170,7 +170,7 @@ const ProjectDetail = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-4 text-center">
           <Button 
-            onClick={() => scrollToSection("projects")}
+            onClick={() => scrollToSection("/#contact")}
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Interested in this project? Let's talk
