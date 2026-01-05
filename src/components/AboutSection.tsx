@@ -25,7 +25,7 @@ const AboutSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">About Me</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Passionate About <span className="gradient-text">Data-Driven Solutions</span>
+              Passionate About <span className="gradient-text text-[#895bf5]">Data-Driven Solutions</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
