@@ -15,17 +15,20 @@ export default {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Montserrat',
+  				'DM Sans',
   				'ui-sans-serif',
   				'system-ui',
-  				'sans-serif',
-  				'Apple Color Emoji',
-  				'Segoe UI Emoji',
-  				'Segoe UI Symbol',
-  				'Noto Color Emoji'
+  				'-apple-system',
+  				'BlinkMacSystemFont',
+  				'Segoe UI',
+  				'Roboto',
+  				'Helvetica Neue',
+  				'Arial',
+  				'Noto Sans',
+  				'sans-serif'
   			],
   			mono: [
-  				'JetBrains Mono',
+  				'SF Mono',
   				'ui-monospace',
   				'SFMono-Regular',
   				'Menlo',
@@ -36,6 +39,7 @@ export default {
   				'monospace'
   			],
   			serif: [
+  				'Crimson Pro',
   				'ui-serif',
   				'Georgia',
   				'Cambria',
@@ -111,7 +115,7 @@ export default {
   					height: '0'
   				}
   			},
-  			'float': {
+  			float: {
   				'0%, 100%': {
   					transform: 'translateY(0)'
   				},
@@ -159,11 +163,20 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			'float': 'float 6s ease-in-out infinite',
+  			float: 'float 6s ease-in-out infinite',
   			'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
   			'slide-up': 'slide-up 0.6s ease-out forwards',
   			'fade-in': 'fade-in 0.8s ease-out forwards',
   			'scale-in': 'scale-in 0.5s ease-out forwards'
+  		},
+  		boxShadow: {
+  			'2xs': 'var(--shadow-2xs)',
+  			xs: 'var(--shadow-xs)',
+  			sm: 'var(--shadow-sm)',
+  			md: 'var(--shadow-md)',
+  			lg: 'var(--shadow-lg)',
+  			xl: 'var(--shadow-xl)',
+  			'2xl': 'var(--shadow-2xl)'
   		}
   	}
   },
