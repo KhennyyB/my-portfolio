@@ -1,45 +1,21 @@
-import React, { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
-import LoadingBlock from "@/components/LoadingBlock";
-
-const AboutSection = lazy(() => import("@/components/AboutSection"));
-const SkillsSection = lazy(() => import("@/components/SkillsSection"));
-const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
 
 const Index = () => {
-    const location = useLocation();
-
-  useEffect(() => {
-    if (!location.hash) return;
-    const id = location.hash.replace("#", "");
-    let tries = 0;
-    const maxTries = 20;
-    const tryScroll = () => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      } else if (tries < maxTries) {
-        tries += 1;
-        setTimeout(tryScroll, 50);
-      }
-    };
-    // give router a tick to switch routes first
-    setTimeout(tryScroll, 0);
-  }, [location]);
-
   return (
     <>
       <Helmet>
         <title>Ekene Okoli | Data Analyst - Excel, SQL, Power BI Expert</title>
-        <meta
-          name="description"
-          content="Ekene Okoli is a Data Analyst with 3+ years of experience in Excel, SQL, and Power BI. Transforming data into actionable insights for business decisions."
+        <meta 
+          name="description" 
+          content="Ekene Okoli is a Data Analyst with 3+ years of experience in Excel, SQL, and Power BI. Transforming data into actionable insights for business decisions." 
         />
         <meta name="keywords" content="Data Analyst, Excel, SQL, Power BI, Data Visualization, Business Intelligence, Lagos, Nigeria" />
         <meta name="author" content="Ekene Okoli" />
@@ -54,25 +30,13 @@ const Index = () => {
 
       <div className="min-h-screen bg-background">
         <Navbar />
-
+        
         <main>
           <HeroSection />
-
-          <Suspense fallback={<LoadingBlock label="Loading about…" />}>
-            <AboutSection />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock label="Loading skills…" />}>
-            <SkillsSection />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock label="Loading projects…" />}>
-            <ProjectsSection />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock label="Loading contact…" />}>
-            <ContactSection />
-          </Suspense>
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ContactSection />
         </main>
 
         <Footer />
