@@ -2,8 +2,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import { projects, projectDetailData } from "@/data/projectsData";
+import { exportProjectData } from "@/utils/exportProject";
 import SalesPerformanceDetail from "@/components/projects/SalesPerformanceDetail";
 import CustomerBehaviorDetail from "@/components/projects/CustomerBehaviorDetail";
 import BusinessIntelligenceDetail from "@/components/projects/BusinessIntelligenceDetail";
@@ -74,9 +75,20 @@ const ProjectDetail = () => {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Projects
             </Button>
-            <span className="text-sm text-muted-foreground font-mono">
-              {project.tools.join(" • ")}
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-muted-foreground font-mono hidden md:block">
+                {project.tools.join(" • ")}
+              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => exportProjectData(project.id, project.title)}
+                className="gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Export Data
+              </Button>
+            </div>
           </div>
         </div>
       </header>
