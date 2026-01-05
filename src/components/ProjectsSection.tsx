@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { projects } from "@/data/projectsData";
 const ProjectsSection = () => {
   const navigate = useNavigate();
-  return <section id="projects" className="py-20 relative md:py-[70px]">
+  return <section id="projects" className="py-20 relative md:py-[128px]">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
