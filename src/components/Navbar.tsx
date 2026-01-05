@@ -44,7 +44,7 @@ const Navbar = () => {
             behavior: "smooth"
           });
         }}>
-            <span className="gradient-text text-[#6fa9ec]">Ekene</span>
+            <span className="gradient-text text-[#895bf5]">Ekene</span>
             <span className="text-foreground">.dev</span>
           </a>
 
