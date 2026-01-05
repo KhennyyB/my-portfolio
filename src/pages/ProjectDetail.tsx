@@ -105,7 +105,7 @@ const ProjectDetail = () => {
       </header>
 
       {/* Hero Section */}
-      <section className={`bg-[#895bf5] py-16`}>
+      <section className={`bg-white py-16 border border-gray-200`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
