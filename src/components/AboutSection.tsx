@@ -25,7 +25,7 @@ const AboutSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">About Me</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Passionate About <span className="gradient-text text-[#895bf5]">Data-Driven Solutions</span>
+              Passionate About <span className="gradient-text">Data-Driven Solutions</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
@@ -64,7 +64,7 @@ const AboutSection = () => {
             </div>
 
             {/* Right content - Cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4 bg-inherit">
               {highlights.map((item, index) => <Card key={index} variant="glow" className="group cursor-default">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

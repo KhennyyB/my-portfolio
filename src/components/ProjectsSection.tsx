@@ -12,7 +12,7 @@ const ProjectsSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">Portfolio</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Featured <span className="gradient-text">Projects</span>
+              Featured <span className="gradient-text text-[#6fa9ec]">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Real-world data analysis projects demonstrating expertise in Excel, SQL, 
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
 
                     {/* Tools */}
                     <div className="flex flex-wrap gap-2">
-                      {project.tools.map((tool, toolIndex) => <span key={toolIndex} className="px-3 py-1 rounded-full bg-secondary text-xs font-medium text-foreground border border-border">
+                      {project.tools.map((tool, toolIndex) => <span key={toolIndex} className="px-3 py-1 rounded-full text-xs font-medium text-foreground border border-border bg-white">
                           {tool}
                         </span>)}
                     </div>
