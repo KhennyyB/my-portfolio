@@ -1,21 +1,24 @@
+import React, { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import LoadingBlock from "@/components/LoadingBlock";
+
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const SkillsSection = lazy(() => import("@/components/SkillsSection"));
+const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
 
 const Index = () => {
   return (
     <>
       <Helmet>
         <title>Ekene Okoli | Data Analyst - Excel, SQL, Power BI Expert</title>
-        <meta 
-          name="description" 
-          content="Ekene Okoli is a Data Analyst with 3+ years of experience in Excel, SQL, and Power BI. Transforming data into actionable insights for business decisions." 
+        <meta
+          name="description"
+          content="Ekene Okoli is a Data Analyst with 3+ years of experience in Excel, SQL, and Power BI. Transforming data into actionable insights for business decisions."
         />
         <meta name="keywords" content="Data Analyst, Excel, SQL, Power BI, Data Visualization, Business Intelligence, Lagos, Nigeria" />
         <meta name="author" content="Ekene Okoli" />
@@ -30,13 +33,25 @@ const Index = () => {
 
       <div className="min-h-screen bg-background">
         <Navbar />
-        
+
         <main>
           <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <ContactSection />
+
+          <Suspense fallback={<LoadingBlock label="Loading about…" />}>
+            <AboutSection />
+          </Suspense>
+
+          <Suspense fallback={<LoadingBlock label="Loading skills…" />}>
+            <SkillsSection />
+          </Suspense>
+
+          <Suspense fallback={<LoadingBlock label="Loading projects…" />}>
+            <ProjectsSection />
+          </Suspense>
+
+          <Suspense fallback={<LoadingBlock label="Loading contact…" />}>
+            <ContactSection />
+          </Suspense>
         </main>
 
         <Footer />
