@@ -35,7 +35,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-foreground mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate("/#projects")} variant="outline">
+          <Button onClick={() => navigate("/")} variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
           </Button>
