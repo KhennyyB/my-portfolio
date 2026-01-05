@@ -27,7 +27,7 @@ const ProjectsSection = () => {
                 <CardContent className="p-0">
                   {/* Header with gradient */}
                   <div className={`bg-gradient-to-br ${project.color} p-6`}>
-                    <div className="flex items-center justify-between">
+                    <div className="items-center justify-between flex flex-row">
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                         <project.icon className="w-7 h-7 text-primary" />
                       </div>

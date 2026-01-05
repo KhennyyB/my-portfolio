@@ -53,7 +53,7 @@ const Navbar = () => {
             {navLinks.map(link => <button key={link.href} onClick={() => scrollToSection(link.href)} className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium">
                 {link.label}
               </button>)}
-            <a href="/Ekene_Okoli_Resume.pdf" download className="rounded-md bg-[#6fa9ec]">
+            <a href="/Ekene_Okoli_Resume.pdf" download className="rounded-md bg-[#895bf5]">
               <Button variant="hero" size="sm">
                 <Download className="w-4 h-4" />
                 Resume
