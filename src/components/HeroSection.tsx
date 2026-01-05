@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown, Database, BarChart3, PieChart, TrendingUp } from "lucide-react";
-
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden data-grid">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden data-grid">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />
@@ -43,7 +42,7 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up">
             <span className="text-foreground">Data Analyst</span>
             <br />
-            <span className="gradient-text">Turning Data into Insights</span>
+            <span className="gradient-text text-[#895bf5]">Turning Data into Insights</span>
           </h1>
 
           {/* Subtitle */}
@@ -54,47 +53,34 @@ const HeroSection = () => {
 
           {/* Skills tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-slide-up delay-200">
-            {["Excel", "SQL", "Power BI", "Data Visualization", "EDA"].map((skill) => (
-              <span
-                key={skill}
-                className="px-4 py-2 rounded-lg bg-secondary border border-border text-sm font-medium text-foreground"
-              >
+            {["Excel", "SQL", "Power BI", "Data Visualization", "EDA"].map(skill => <span key={skill} className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-inherit bg-white">
                 {skill}
-              </span>
-            ))}
+              </span>)}
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-300">
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={() => scrollToSection("projects")}
-            >
+            <Button variant="hero" size="xl" onClick={() => scrollToSection("projects")}>
               View Projects
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button
-              variant="heroOutline"
-              size="xl"
-              onClick={() => scrollToSection("contact")}
-            >
+            <Button variant="heroOutline" size="xl" onClick={() => scrollToSection("contact")}>
               Contact Me
             </Button>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mt-16 max-w-lg mx-auto animate-fade-in delay-400">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text">3+</div>
+            <div className="text-center text-[#6fa9ec]">
+              <div className="text-3xl md:text-4xl font-bold gradient-text text-[#6fa9ec]">3+</div>
               <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text">15+</div>
+              <div className="text-3xl md:text-4xl font-bold gradient-text text-[#6fa9ec]">15+</div>
               <div className="text-sm text-muted-foreground mt-1">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text">95%</div>
+              <div className="text-3xl md:text-4xl font-bold gradient-text text-[#6fa9ec]">95%</div>
               <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
             </div>
           </div>
@@ -105,8 +91,6 @@ const HeroSection = () => {
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
