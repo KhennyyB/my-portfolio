@@ -3,12 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { projects } from "@/data/projectsData";
-
 const ProjectsSection = () => {
   const navigate = useNavigate();
-
-  return (
-    <section id="projects" className="py-20 md:py-32 relative">
+  return <section id="projects" className="py-20 relative md:py-[70px]">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -26,13 +23,7 @@ const ProjectsSection = () => {
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                variant="glow"
-                className="group overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
-                onClick={() => navigate(`/project/${project.id}`)}
-              >
+            {projects.map((project, index) => <Card key={index} variant="glow" className="group overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]" onClick={() => navigate(`/project/${project.id}`)}>
                 <CardContent className="p-0">
                   {/* Header with gradient */}
                   <div className={`bg-gradient-to-br ${project.color} p-6`}>
@@ -64,26 +55,19 @@ const ProjectsSection = () => {
 
                     {/* Tools */}
                     <div className="flex flex-wrap gap-2">
-                      {project.tools.map((tool, toolIndex) => (
-                        <span
-                          key={toolIndex}
-                          className="px-3 py-1 rounded-full bg-secondary text-xs font-medium text-foreground border border-border"
-                        >
+                      {project.tools.map((tool, toolIndex) => <span key={toolIndex} className="px-3 py-1 rounded-full bg-secondary text-xs font-medium text-foreground border border-border">
                           {tool}
-                        </span>
-                      ))}
+                        </span>)}
                     </div>
 
                     {/* Key Insights */}
                     <div className="pt-4 border-t border-border">
                       <h4 className="text-sm font-semibold text-foreground mb-3">Key Insights:</h4>
                       <ul className="space-y-2">
-                        {project.insights.map((insight, insightIndex) => (
-                          <li key={insightIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        {project.insights.map((insight, insightIndex) => <li key={insightIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
                             <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                             {insight}
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
                     </div>
 
@@ -95,8 +79,7 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           {/* CTA */}
@@ -104,22 +87,18 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-4">
               Interested in seeing more or discussing a project?
             </p>
-            <Button
-              variant="heroOutline"
-              size="lg"
-              onClick={() => {
-                const element = document.getElementById("contact");
-                if (element) element.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
+            <Button variant="heroOutline" size="lg" onClick={() => {
+            const element = document.getElementById("contact");
+            if (element) element.scrollIntoView({
+              behavior: "smooth"
+            });
+          }}>
               Let's Work Together
               <ExternalLink className="w-4 h-4" />
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProjectsSection;

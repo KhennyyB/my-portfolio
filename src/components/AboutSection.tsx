@@ -18,7 +18,7 @@ const AboutSection = () => {
     title: "Business Impact",
     description: "30% reduction in data errors through process optimization"
   }];
-  return <section id="about" className="py-20 md:py-32 relative">
+  return <section id="about" className="py-20 relative md:py-[70px]">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
