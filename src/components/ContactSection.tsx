@@ -156,7 +156,7 @@ const ContactSection = () => {
                         <Input id="name" placeholder="John Doe" value={formData.name} onChange={e => setFormData({
                         ...formData,
                         name: e.target.value
-                      })} className="bg-secondary border-border focus:border-primary" maxLength={100} />
+                      })} className="bg-white border-border focus:border-primary" maxLength={100} />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="email" className="text-sm font-medium text-foreground">
@@ -165,7 +165,7 @@ const ContactSection = () => {
                         <Input id="email" type="email" placeholder="john@example.com" value={formData.email} onChange={e => setFormData({
                         ...formData,
                         email: e.target.value
-                      })} className="bg-secondary border-border focus:border-primary" maxLength={255} />
+                      })} className="bg-white border-border focus:border-primary" maxLength={255} />
                       </div>
                     </div>
                     
@@ -176,7 +176,7 @@ const ContactSection = () => {
                       <Textarea id="message" placeholder="Tell me about your project or opportunity..." rows={5} value={formData.message} onChange={e => setFormData({
                       ...formData,
                       message: e.target.value
-                    })} className="bg-secondary border-border focus:border-primary resize-none" maxLength={2000} />
+                    })} className="bg-white border-border focus:border-primary resize-none" maxLength={2000} />
                     </div>
 
                     <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isLoading}>
