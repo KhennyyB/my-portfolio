@@ -66,14 +66,14 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
               <BarChart data={data.departmentKPIs}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="dept" stroke="hsl(var(--muted-foreground))" />
-                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v/1000}K`} />
+                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v/1000}K`} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
                     border: '1px solid hsl(var(--border))',
                     borderRadius: '8px'
                   }}
-                  formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                  formatter={(value: number) => [`₦${value.toLocaleString()}`, '']}
                 />
                 <Legend />
                 <Bar dataKey="budget" name="Budget" fill="#f59e0b" radius={[4, 4, 0, 0]} />
@@ -95,14 +95,14 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
               <LineChart data={data.financialMetrics}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="quarter" stroke="hsl(var(--muted-foreground))" />
-                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v}M`} />
+                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v}M`} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
                     border: '1px solid hsl(var(--border))',
                     borderRadius: '8px'
                   }}
-                  formatter={(value: number) => [`$${value}M`, '']}
+                  formatter={(value: number) => [`₦${value}M`, '']}
                 />
                 <Legend />
                 <Line type="monotone" dataKey="revenue" name="Revenue" stroke="#10b981" strokeWidth={3} dot={{ fill: '#10b981' }} />

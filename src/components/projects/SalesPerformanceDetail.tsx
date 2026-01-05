@@ -50,7 +50,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={data.salesByRegion} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                <XAxis type="number" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v/1000}K`} />
+                <XAxis type="number" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v/1000}K`} />
                 <YAxis dataKey="region" type="category" stroke="hsl(var(--muted-foreground))" width={60} />
                 <Tooltip 
                   contentStyle={{ 
@@ -58,7 +58,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
                     border: '1px solid hsl(var(--border))',
                     borderRadius: '8px'
                   }}
-                  formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                  formatter={(value: number) => [`₦${value.toLocaleString()}`, '']}
                 />
                 <Legend />
                 <Bar dataKey="revenue" name="Revenue" fill="#10b981" radius={[0, 4, 4, 0]} />
@@ -80,14 +80,14 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
               <LineChart data={data.monthlyTrend}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" />
-                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v/1000}K`} />
+                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v/1000}K`} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
                     border: '1px solid hsl(var(--border))',
                     borderRadius: '8px'
                   }}
-                  formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                  formatter={(value: number) => [`₦${value.toLocaleString()}`, '']}
                 />
                 <Legend />
                 <Line type="monotone" dataKey="revenue" name="Actual Revenue" stroke="#10b981" strokeWidth={3} dot={{ fill: '#10b981' }} />
@@ -109,7 +109,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
               <BarChart data={data.topProducts}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" />
-                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v/1000}K`} />
+                <YAxis stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v/1000}K`} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
@@ -117,12 +117,12 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
                     borderRadius: '8px'
                   }}
                   formatter={(value: number, name: string) => [
-                    name === 'sales' ? `$${value.toLocaleString()}` : value.toLocaleString(),
+                    name === 'sales' ? `₦${value.toLocaleString()}` : value.toLocaleString(),
                     name === 'sales' ? 'Sales' : 'Units'
                   ]}
                 />
                 <Legend />
-                <Bar dataKey="sales" name="Sales ($)" fill="#10b981" radius={[4, 4, 0, 0]}>
+                <Bar dataKey="sales" name="Sales (₦)" fill="#10b981" radius={[4, 4, 0, 0]}>
                   {data.topProducts.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                   ))}

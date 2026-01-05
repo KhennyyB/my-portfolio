@@ -127,7 +127,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data.revenueByCategory} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                  <XAxis type="number" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `$${v/1000}K`} />
+                  <XAxis type="number" stroke="hsl(var(--muted-foreground))" tickFormatter={(v) => `₦${v/1000}K`} />
                   <YAxis dataKey="category" type="category" stroke="hsl(var(--muted-foreground))" width={100} />
                   <Tooltip 
                     contentStyle={{ 
@@ -135,7 +135,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
                       border: '1px solid hsl(var(--border))',
                       borderRadius: '8px'
                     }}
-                    formatter={(value: number) => [`$${value.toLocaleString()}`, 'Revenue']}
+                    formatter={(value: number) => [`₦${value.toLocaleString()}`, 'Revenue']}
                   />
                   <Bar dataKey="revenue" fill="#8b5cf6" radius={[0, 4, 4, 0]}>
                     {data.revenueByCategory.map((entry, index) => (
