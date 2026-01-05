@@ -66,8 +66,9 @@ const SkillsSection = () => {
     { icon: Code2, name: "JavaScript", level: "Intermediate" },
     { icon: Globe, name: "HTML/CSS", level: "Advanced" },
     { icon: Server, name: "Git & GitHub", level: "Intermediate" },
-    { icon: Users, name: "Agile/Scrum", level: "Experienced" },
+    { icon: Server, name: "API", level: "Intermediate" },
     { icon: Code2, name: "React", level: "Intermediate" },
+    { icon: Globe, name: "Tailwind CSS", level: "Intermediate" },
   ];
 
   return (
