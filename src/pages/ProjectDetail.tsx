@@ -17,6 +17,13 @@ const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
 
+  const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
@@ -69,7 +76,7 @@ const ProjectDetail = () => {
           <div className="flex items-center justify-between">
             <Button 
               variant="ghost" 
-              onClick={() => navigate("/#projects")}
+              onClick={() => scrollToSection("projects")}
               className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -163,7 +170,7 @@ const ProjectDetail = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-4 text-center">
           <Button 
-            onClick={() => navigate("/#contact")}
+            onClick={() => scrollToSection("projects")}
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Interested in this project? Let's talk
