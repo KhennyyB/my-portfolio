@@ -12,7 +12,7 @@ const ProjectsSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">Portfolio</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Featured <span className="gradient-text text-[#66ffab]">Projects</span>
+              Featured <span className="gradient-text text-[#895bf5]">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Real-world data analysis projects demonstrating expertise in Excel, SQL, 
