@@ -5,7 +5,11 @@ export const useHashScroll = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) return;
+    // If no hash, scroll to top of page
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      return;
+    }
 
     const id = location.hash.replace("#", "");
     let tries = 0;
