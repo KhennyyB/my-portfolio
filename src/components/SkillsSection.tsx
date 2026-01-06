@@ -56,7 +56,7 @@ const SkillsSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">Expertise</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Technical <span className="gradient-text text-black">Skills</span>
+              Technical <span className="gradient-text text-[#895bf5]">Skills</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Specialized in turning complex datasets into clear, actionable insights using 
