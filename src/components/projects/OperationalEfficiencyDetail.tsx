@@ -94,7 +94,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* Resource Utilization */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Resource Utilization Analysis</CardTitle>
+          <CardTitle className="text-primary">Resource Utilization Analysis</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
