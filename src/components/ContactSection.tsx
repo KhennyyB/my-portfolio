@@ -82,7 +82,7 @@ const ContactSection = () => {
     icon: Linkedin,
     label: "LinkedIn",
     value: "Connect with me",
-    href: "https://linkedin.com/in/ekene-okoli-93480816b"
+    href: "https://linkedin.com/in/ekene-okoli"
   }, {
     icon: MapPin,
     label: "Location",
