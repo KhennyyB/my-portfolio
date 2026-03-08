@@ -67,7 +67,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
 
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Segment Details</CardTitle>
+            <CardTitle className="text-primary">Segment Details</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
