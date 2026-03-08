@@ -123,7 +123,7 @@ export const webDevelopmentProjects = [
   {
     id: "localdrive-app",
     title: "LocalDrive",
-    description: "A full-featured driving school platform that connects learners with certified instructors in their neighborhood. Features include instructor matching, secure online payments, lesson scheduling, and digital progress tracking for a modern driving education experience.",
+    description: "A full-featured driving platform that connects learners with certified instructors in their neighborhood. Features include instructor matching, secure online payments, lesson scheduling, and digital progress tracking for a modern driving education experience.",
     tools: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
     icon: Car,
     color: "from-teal-500 to-cyan-600",
