@@ -33,7 +33,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
       {/* Conversion Funnel */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Conversion Funnel Analysis</CardTitle>
+          <CardTitle className="text-primary">Conversion Funnel Analysis</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-2 gap-8">
