@@ -147,7 +147,7 @@ export const webDevelopmentProjects = [
       "Smooth animations & transitions",
       "Clear feature presentation layout"
     ],
-    metric: { icon: Globe, value: "Live", label: "Deployed" },
+    metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://magverse.netlify.app/",
   },
   {
