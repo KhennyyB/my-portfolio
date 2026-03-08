@@ -94,7 +94,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       <div className="grid md:grid-cols-2 gap-8">
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Error Types & Severity</CardTitle>
+            <CardTitle className="text-primary">Error Types & Severity</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
