@@ -41,7 +41,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       {/* Migration Timeline */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Migration Timeline</CardTitle>
+          <CardTitle className="text-primary">Migration Timeline</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap justify-between gap-4">
