@@ -36,7 +36,7 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
       )}
 
       {/* Content */}
-      <div className="p-6 space-y-4">
+      <div className="p-5 space-y-3">
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
             {project.title}
@@ -100,7 +100,7 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-8">
               Projects demonstrating expertise in Excel, SQL, Power BI, and data visualization.
             </p>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {dataAnalysisProjects.map((project, index) => (
                 <ProjectCard
                   key={index}
@@ -117,7 +117,7 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-8">
               Frontend projects built with modern technologies — React, TypeScript, and responsive design.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {webDevelopmentProjects.map((project, index) => (
                 <ProjectCard
                   key={index}
