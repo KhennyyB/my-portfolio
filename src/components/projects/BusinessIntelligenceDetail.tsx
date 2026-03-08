@@ -58,7 +58,7 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
       {/* Department KPIs */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Department Budget vs Actual</CardTitle>
+          <CardTitle className="text-primary">Department Budget vs Actual</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
