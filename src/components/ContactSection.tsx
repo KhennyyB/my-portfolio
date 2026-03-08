@@ -101,7 +101,7 @@ const ContactSection = () => {
               Let's <span className="gradient-text text-[#895bf5]">Connect</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Looking for a data analyst to help with your next project? 
+              Looking for a data analyst/frontend developer to help with your next project? 
               I'm always open to discussing new opportunities and collaborations.
             </p>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-6" />
