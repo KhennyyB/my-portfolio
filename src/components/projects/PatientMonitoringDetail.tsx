@@ -77,7 +77,7 @@ const PatientMonitoringDetail = ({ data }: PatientMonitoringDetailProps) => {
       {/* Team Performance */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Team Performance</CardTitle>
+          <CardTitle className="text-primary">Team Performance</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
