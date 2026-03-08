@@ -48,7 +48,7 @@ const PatientMonitoringDetail = ({ data }: PatientMonitoringDetailProps) => {
       {/* Validation Progress */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Daily Validation Progress</CardTitle>
+          <CardTitle className="text-primary">Daily Validation Progress</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
