@@ -41,11 +41,7 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">I'm Ekene Okoli, an Application/Data Analyst and Frontend Developer with over 4 years of experience transforming raw data into actionable business insights and building modern web applications.
-              <span className="text-foreground font-semibold">Ekene Okoli</span>, an Application Analyst and 
-                Frontend Developer with over 3 years of experience transforming raw data into actionable 
-                business insights and building modern web applications.
-              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">I'm <span className="text-foreground font-semibold">Ekene Okoli</span>, an Application/Data Analyst and Frontend Developer with over 4 years of experience transforming raw data into actionable business insights and building modern web applications.</p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 My expertise spans across <span className="text-primary">Excel</span>, <span className="text-primary">SQL</span>, 
                 <span className="text-primary"> data visualization</span>, and <span className="text-primary">frontend development</span> with 
