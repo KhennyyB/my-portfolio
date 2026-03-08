@@ -150,6 +150,7 @@ export const webDevelopmentProjects = [
     ],
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://magverse.netlify.app/",
+    image: "/projects/magverse-preview.png",
   },
   {
     id: "eduford-landing-page",
