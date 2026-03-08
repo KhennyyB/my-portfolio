@@ -21,9 +21,9 @@ const Index = () => {
         <title>Ekene Okoli | Data Analyst - Excel, SQL, Power BI Expert</title>
         <meta
           name="description"
-          content="Ekene Okoli is a Data Analyst with 3+ years of experience in Excel, SQL, and Power BI. Transforming data into actionable insights for business decisions."
+          content="Ekene Okoli is a Data Analyst & Frontend Developer with 3+ years of experience in Excel, SQL, Power BI, React, and TypeScript."
         />
-        <meta name="keywords" content="Data Analyst, Excel, SQL, Power BI, Data Visualization, Business Intelligence, Lagos, Nigeria" />
+        <meta name="keywords" content="Data Analyst, Frontend Developer, Excel, SQL, Power BI, React, TypeScript, Tailwind CSS, Lagos, Nigeria" />
         <meta name="author" content="Ekene Okoli" />
         <meta property="og:title" content="Ekene Okoli | Data Analyst Portfolio" />
         <meta property="og:description" content="Data Analyst with expertise in Excel, SQL, and Power BI. Transforming complex data into actionable business insights." />
