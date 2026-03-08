@@ -147,7 +147,7 @@ export const webDevelopmentProjects = [
       "Smooth animations & transitions",
       "Clear feature presentation layout"
     ],
-    metric: { icon: Globe, value: "Live", label: "Deployed" },
+    metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://magverse.netlify.app/",
   },
   {
@@ -162,7 +162,7 @@ export const webDevelopmentProjects = [
       "Multi-section responsive design",
       "Course & campus showcase"
     ],
-    metric: { icon: Globe, value: "Live", label: "Deployed" },
+    metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://khennyyb.github.io/Eduford_landing_page/",
   },
 ];
