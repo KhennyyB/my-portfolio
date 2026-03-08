@@ -46,14 +46,14 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up delay-100">
-            3+ years of experience in Excel, SQL, Power BI & Frontend Development. I transform complex data 
-            into actionable insights and build responsive, user-friendly web applications.
-          </p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up delay-100">4+ years of experience in Excel, SQL, Power BI & Frontend Development. I transform complex data into actionable insights and build responsive, user-friendly web applications.
+
+
+        </p>
 
           {/* Skills tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-slide-up delay-200">
-            {["Excel", "SQL", "Power BI", "React", "TypeScript", "Tailwind CSS"].map(skill => <span key={skill} className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-inherit bg-white">
+            {["Excel", "SQL", "Power BI", "React", "TypeScript", "Tailwind CSS"].map((skill) => <span key={skill} className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-inherit bg-white">
                 {skill}
               </span>)}
           </div>

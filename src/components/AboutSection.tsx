@@ -41,8 +41,8 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm <span className="text-foreground font-semibold">Ekene Okoli</span>, an Application Analyst and 
+              <p className="text-lg text-muted-foreground leading-relaxed">I'm Ekene Okoli, an Application Analyst and Frontend Developer with over 4 years of experience transforming raw data into actionable business insights and building modern web applications.
+              <span className="text-foreground font-semibold">Ekene Okoli</span>, an Application Analyst and 
                 Frontend Developer with over 3 years of experience transforming raw data into actionable 
                 business insights and building modern web applications.
               </p>
@@ -52,10 +52,10 @@ const AboutSection = () => {
                 React, TypeScript, and modern CSS frameworks, with a proven track record of improving 
                 decision-making processes and delivering polished user experiences.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I thrive on solving complex business problems — from analyzing operational data and building 
-                interactive dashboards to crafting responsive, accessible web applications that delight users.
-              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">I thrive on solving complex business problems, from analyzing operational data and building interactive dashboards to crafting responsive, accessible web applications that delight users.
+
+
+            </p>
 
               {/* Quick facts */}
               <div className="flex flex-wrap gap-4 pt-4">
