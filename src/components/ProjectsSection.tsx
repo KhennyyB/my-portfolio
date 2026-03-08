@@ -117,7 +117,7 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-8">
               Frontend projects built with modern technologies — React, TypeScript, and responsive design.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {webDevelopmentProjects.map((project, index) => (
                 <ProjectCard
                   key={index}
