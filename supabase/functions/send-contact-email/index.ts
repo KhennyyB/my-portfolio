@@ -134,7 +134,7 @@ const handler = async (req: Request): Promise<Response> => {
                 <div class="content">
                   <p>Hi ${name},</p>
                   <p>Thank you for reaching out through my portfolio website. I've received your message and will get back to you as soon as possible.</p>
-                  <p>In the meantime, feel free to connect with me on <a href="https://linkedin.com/in/ekene-okoli-93480816b" target="_blank">LinkedIn</a>.</p>
+                  <p>In the meantime, feel free to connect with me on <a href="https://linkedin.com/in/ekene-okoli" target="_blank">LinkedIn</a>.</p>
                   <p>Best regards,<br><strong>Ekene Okoli</strong><br>Data Analyst</p>
                 </div>
                 <div class="footer">
