@@ -85,7 +85,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
       <div className="grid md:grid-cols-2 gap-8">
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Traffic Sources</CardTitle>
+            <CardTitle className="text-primary">Traffic Sources</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-80">
