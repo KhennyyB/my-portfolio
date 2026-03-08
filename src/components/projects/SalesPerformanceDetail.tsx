@@ -72,7 +72,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
       {/* Monthly Trend */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Revenue Trend vs Forecast</CardTitle>
+          <CardTitle className="text-primary">Revenue Trend vs Forecast</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
