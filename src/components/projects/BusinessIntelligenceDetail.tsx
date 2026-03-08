@@ -87,7 +87,7 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
       {/* Financial Metrics */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Quarterly Financial Performance</CardTitle>
+          <CardTitle className="text-primary">Quarterly Financial Performance</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
