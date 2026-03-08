@@ -33,7 +33,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       <div className="grid md:grid-cols-2 gap-8">
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Customer Segments</CardTitle>
+            <CardTitle className="text-primary">Customer Segments</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-80">
