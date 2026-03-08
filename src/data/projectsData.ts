@@ -132,7 +132,7 @@ export const webDevelopmentProjects = [
       "Seamless booking & payment flow",
       "Mobile-first responsive design"
     ],
-    metric: { icon: Users, value: "4.9★", label: "User Rating" },
+    metric: { icon: Globe, value: "Live", label: "Deployed" },
     liveUrl: "https://localdriveapp.com",
   },
   {
