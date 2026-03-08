@@ -7,21 +7,33 @@ import { dataAnalysisProjects, webDevelopmentProjects } from "@/data/projectsDat
 const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }) => (
   <Card variant="glow" className="group overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]" onClick={onClick}>
     <CardContent className="p-0">
-      {/* Header with gradient */}
-      <div className="bg-white p-6 border-b border-gray-200">
-        <div className="flex items-center justify-between">
-          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-            <project.icon className="w-7 h-7 text-primary" />
-          </div>
-          <div className="text-right">
-            <div className="flex items-center gap-2 text-foreground/90">
-              <project.metric.icon className="w-5 h-5" />
-              <span className="text-2xl font-bold">{project.metric.value}</span>
+      {/* Preview Image */}
+      {project.image ? (
+        <div className="w-full h-48 overflow-hidden border-b border-border">
+          <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        /* Header with icon & metric */
+        <div className="bg-white p-6 border-b border-gray-200">
+          <div className="flex items-center justify-between">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <project.icon className="w-7 h-7 text-primary" />
             </div>
-            {project.metric.label && <span className="text-sm text-foreground/70">{project.metric.label}</span>}
+            <div className="text-right">
+              <div className="flex items-center gap-2 text-foreground/90">
+                <project.metric.icon className="w-5 h-5" />
+                <span className="text-2xl font-bold">{project.metric.value}</span>
+              </div>
+              {project.metric.label && <span className="text-sm text-foreground/70">{project.metric.label}</span>}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Content */}
       <div className="p-6 space-y-4">

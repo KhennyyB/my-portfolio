@@ -134,6 +134,7 @@ export const webDevelopmentProjects = [
     ],
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://localdriveapp.com",
+    image: "/projects/localdrive-preview.png",
   },
   {
     id: "magverse-landing",
@@ -149,6 +150,7 @@ export const webDevelopmentProjects = [
     ],
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://magverse.netlify.app/",
+    image: "/projects/magverse-preview.png",
   },
   {
     id: "eduford-landing-page",
@@ -164,6 +166,7 @@ export const webDevelopmentProjects = [
     ],
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://khennyyb.github.io/Eduford_landing_page/",
+    image: "/projects/eduford-preview.png",
   },
 ];
 
