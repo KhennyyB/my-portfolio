@@ -36,7 +36,7 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
       )}
 
       {/* Content */}
-      <div className="p-6 space-y-4">
+      <div className="p-5 space-y-3">
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
             {project.title}
