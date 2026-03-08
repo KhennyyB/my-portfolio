@@ -100,7 +100,7 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-8">
               Projects demonstrating expertise in Excel, SQL, Power BI, and data visualization.
             </p>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {dataAnalysisProjects.map((project, index) => (
                 <ProjectCard
                   key={index}
