@@ -43,7 +43,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
       {/* Sales by Region */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Sales Performance by Region</CardTitle>
+          <CardTitle className="text-primary">Sales Performance by Region</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
