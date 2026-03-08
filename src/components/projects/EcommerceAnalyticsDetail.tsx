@@ -120,7 +120,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
 
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Revenue by Category</CardTitle>
+            <CardTitle className="text-primary">Revenue by Category</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-80">
