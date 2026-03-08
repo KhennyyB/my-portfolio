@@ -28,7 +28,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* Process Improvements */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Process Time Improvements (Minutes)</CardTitle>
+          <CardTitle className="text-primary">Process Time Improvements (Minutes)</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -65,7 +65,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* Efficiency Trend */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Weekly Efficiency Trend</CardTitle>
+          <CardTitle className="text-primary">Weekly Efficiency Trend</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -94,7 +94,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* Resource Utilization */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Resource Utilization Analysis</CardTitle>
+          <CardTitle className="text-primary">Resource Utilization Analysis</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -130,7 +130,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* SQL Queries */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>SQL Analysis Queries</CardTitle>
+          <CardTitle className="text-primary">SQL Analysis Queries</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

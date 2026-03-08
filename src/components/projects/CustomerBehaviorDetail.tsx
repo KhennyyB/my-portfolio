@@ -33,7 +33,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       <div className="grid md:grid-cols-2 gap-8">
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Customer Segments</CardTitle>
+            <CardTitle className="text-primary">Customer Segments</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-80">
@@ -67,7 +67,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
 
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Segment Details</CardTitle>
+            <CardTitle className="text-primary">Segment Details</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -96,7 +96,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       {/* Purchase Patterns */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Weekly Purchase Patterns</CardTitle>
+          <CardTitle className="text-primary">Weekly Purchase Patterns</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -125,7 +125,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       {/* Customer LTV */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Customer Lifetime Value by Cohort</CardTitle>
+          <CardTitle className="text-primary">Customer Lifetime Value by Cohort</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -154,7 +154,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       {/* SQL Queries */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>SQL Queries Used</CardTitle>
+          <CardTitle className="text-primary">SQL Queries Used</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

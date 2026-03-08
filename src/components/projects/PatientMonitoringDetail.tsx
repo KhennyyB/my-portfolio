@@ -48,7 +48,7 @@ const PatientMonitoringDetail = ({ data }: PatientMonitoringDetailProps) => {
       {/* Validation Progress */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Daily Validation Progress</CardTitle>
+          <CardTitle className="text-primary">Daily Validation Progress</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -77,7 +77,7 @@ const PatientMonitoringDetail = ({ data }: PatientMonitoringDetailProps) => {
       {/* Team Performance */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Team Performance</CardTitle>
+          <CardTitle className="text-primary">Team Performance</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -113,7 +113,7 @@ const PatientMonitoringDetail = ({ data }: PatientMonitoringDetailProps) => {
       {/* Reporting Hours Saved */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Manual Hours Reduction</CardTitle>
+          <CardTitle className="text-primary">Manual Hours Reduction</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">

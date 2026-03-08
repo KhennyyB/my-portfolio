@@ -33,7 +33,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
       {/* Conversion Funnel */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Conversion Funnel Analysis</CardTitle>
+          <CardTitle className="text-primary">Conversion Funnel Analysis</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-2 gap-8">
@@ -85,7 +85,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
       <div className="grid md:grid-cols-2 gap-8">
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Traffic Sources</CardTitle>
+            <CardTitle className="text-primary">Traffic Sources</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-80">
@@ -120,7 +120,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
 
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Revenue by Category</CardTitle>
+            <CardTitle className="text-primary">Revenue by Category</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="h-80">
@@ -152,7 +152,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
       {/* Story Insights */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Data Story: Key Findings</CardTitle>
+          <CardTitle className="text-primary">Data Story: Key Findings</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-3 gap-6">

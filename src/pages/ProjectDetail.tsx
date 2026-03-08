@@ -142,7 +142,7 @@ const ProjectDetail = () => {
       <section className="py-8 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-lg font-semibold text-foreground mb-4">Key Insights</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Key Insights</h2>
             <div className="grid md:grid-cols-3 gap-4">
               {project.insights.map((insight, index) => (
                 <Card key={index} variant="glass" className="p-4">

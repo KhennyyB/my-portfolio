@@ -41,7 +41,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       {/* Migration Timeline */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Migration Timeline</CardTitle>
+          <CardTitle className="text-primary">Migration Timeline</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap justify-between gap-4">
@@ -64,7 +64,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       {/* Validation Results */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Validation Results by Category</CardTitle>
+          <CardTitle className="text-primary">Validation Results by Category</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -94,7 +94,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       <div className="grid md:grid-cols-2 gap-8">
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Error Types & Severity</CardTitle>
+            <CardTitle className="text-primary">Error Types & Severity</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -124,7 +124,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
 
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Field Accuracy Rates</CardTitle>
+            <CardTitle className="text-primary">Field Accuracy Rates</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -150,7 +150,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       {/* Summary Stats */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Validation Summary</CardTitle>
+          <CardTitle className="text-primary">Validation Summary</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

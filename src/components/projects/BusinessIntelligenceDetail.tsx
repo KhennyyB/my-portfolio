@@ -58,7 +58,7 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
       {/* Department KPIs */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Department Budget vs Actual</CardTitle>
+          <CardTitle className="text-primary">Department Budget vs Actual</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -87,7 +87,7 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
       {/* Financial Metrics */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Quarterly Financial Performance</CardTitle>
+          <CardTitle className="text-primary">Quarterly Financial Performance</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -117,7 +117,7 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
       {/* Efficiency Radar */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Department Efficiency Overview</CardTitle>
+          <CardTitle className="text-primary">Department Efficiency Overview</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">

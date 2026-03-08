@@ -43,7 +43,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
       {/* Sales by Region */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Sales Performance by Region</CardTitle>
+          <CardTitle className="text-primary">Sales Performance by Region</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -72,7 +72,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
       {/* Monthly Trend */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Revenue Trend vs Forecast</CardTitle>
+          <CardTitle className="text-primary">Revenue Trend vs Forecast</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
@@ -101,7 +101,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
       {/* Top Products */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Top Performing Products</CardTitle>
+          <CardTitle className="text-primary">Top Performing Products</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
