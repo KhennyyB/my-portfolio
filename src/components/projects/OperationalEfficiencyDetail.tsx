@@ -65,7 +65,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* Efficiency Trend */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Weekly Efficiency Trend</CardTitle>
+          <CardTitle className="text-primary">Weekly Efficiency Trend</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
