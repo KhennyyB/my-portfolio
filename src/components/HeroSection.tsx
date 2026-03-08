@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown, Database, BarChart3, PieChart, TrendingUp } from "lucide-react";
+import { ArrowRight, ChevronDown, Database, BarChart3, PieChart, TrendingUp, Code2, Layout } from "lucide-react";
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -23,10 +23,10 @@ const HeroSection = () => {
           <BarChart3 className="w-16 h-16" />
         </div>
         <div className="absolute bottom-1/4 left-[25%] text-primary/20 animate-float delay-400">
-          <PieChart className="w-10 h-10" />
+          <Code2 className="w-10 h-10" />
         </div>
         <div className="absolute bottom-1/3 right-[15%] text-primary/20 animate-float delay-500">
-          <TrendingUp className="w-14 h-14" />
+          <Layout className="w-14 h-14" />
         </div>
       </div>
 
@@ -40,20 +40,20 @@ const HeroSection = () => {
 
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up">
-            <span className="text-foreground">Data Analyst</span>
+            <span className="text-foreground">Data Analyst &</span>
             <br />
-            <span className="gradient-text text-[#895bf5]">Turning Data into Insights</span>
+            <span className="gradient-text text-[#895bf5]">Frontend Developer</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up delay-100">
-            3+ years of experience in Excel, SQL & Power BI. I transform complex data 
-            into actionable insights that drive business decisions and digital transformation.
+            3+ years of experience in Excel, SQL, Power BI & Frontend Development. I transform complex data 
+            into actionable insights and build responsive, user-friendly web applications.
           </p>
 
           {/* Skills tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-slide-up delay-200">
-            {["Excel", "SQL", "Power BI", "Data Visualization", "EDA"].map(skill => <span key={skill} className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-inherit bg-white">
+            {["Excel", "SQL", "Power BI", "React", "TypeScript", "Tailwind CSS"].map(skill => <span key={skill} className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-inherit bg-white">
                 {skill}
               </span>)}
           </div>

@@ -1,10 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, GraduationCap, Award, Target } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Target, Code2, Layout } from "lucide-react";
 const AboutSection = () => {
   const highlights = [{
     icon: Briefcase,
     title: "Enterprise Analyst",
     description: "Currently at Iwosan Lagoon Hospitals, driving data-driven decisions"
+  }, {
+    icon: Code2,
+    title: "Frontend Developer",
+    description: "Building responsive, modern web applications with React & TypeScript"
   }, {
     icon: GraduationCap,
     title: "Certified Professional",
@@ -17,6 +21,10 @@ const AboutSection = () => {
     icon: Target,
     title: "Business Impact",
     description: "30% reduction in data errors through process optimization"
+  }, {
+    icon: Layout,
+    title: "Web Solutions",
+    description: "Delivering pixel-perfect, accessible interfaces for real-world products"
   }];
   return <section id="about" className="py-20 relative md:py-[70px]">
       <div className="container mx-auto px-4">
@@ -25,7 +33,7 @@ const AboutSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-mono text-sm tracking-wider uppercase">About Me</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-              Passionate About <span className="gradient-text text-[#895bf5]">Data-Driven Solutions</span>
+              Data Analyst & <span className="gradient-text text-[#895bf5]">Frontend Developer</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
@@ -36,17 +44,17 @@ const AboutSection = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm <span className="text-foreground font-semibold">Ekene Okoli</span>, an Application Analyst and 
                 Frontend Developer with over 3 years of experience transforming raw data into actionable 
-                business insights.
+                business insights and building modern web applications.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 My expertise spans across <span className="text-primary">Excel</span>, <span className="text-primary">SQL</span>, 
-                and <span className="text-primary">data visualization</span>, with a proven track record of improving 
-                decision-making processes and optimizing user experiences through data-driven approaches.
+                <span className="text-primary"> data visualization</span>, and <span className="text-primary">frontend development</span> with 
+                React, TypeScript, and modern CSS frameworks, with a proven track record of improving 
+                decision-making processes and delivering polished user experiences.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I thrive on solving complex business problems, from analyzing operational data to building 
-                interactive dashboards that enable real-time monitoring and reduce manual reporting hours 
-                significantly.
+                I thrive on solving complex business problems — from analyzing operational data and building 
+                interactive dashboards to crafting responsive, accessible web applications that delight users.
               </p>
 
               {/* Quick facts */}
@@ -54,11 +62,6 @@ const AboutSection = () => {
                 <div className="flex items-center gap-2 text-sm">
                   <span className="w-2 h-2 bg-primary rounded-full" />
                   <span className="text-muted-foreground">Lagos, Nigeria</span>
-                </div>
-                
-                <div className="flex items-center gap-2 text-sm">
-                  
-                  
                 </div>
               </div>
             </div>

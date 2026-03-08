@@ -9,10 +9,16 @@ import {
   ShoppingCart,
   Activity,
   ClipboardCheck,
-  HeartPulse
+  HeartPulse,
+  Globe,
+  Layout,
+  GraduationCap,
+  Car,
+  Gamepad2,
+  ExternalLink
 } from "lucide-react";
 
-export const projects = [
+export const dataAnalysisProjects = [
   {
     id: "sales-performance-dashboard",
     title: "Sales Performance Dashboard",
@@ -112,6 +118,57 @@ export const projects = [
     metric: { icon: Activity, value: "20%", label: "Time Saved" },
   },
 ];
+
+export const webDevelopmentProjects = [
+  {
+    id: "localdrive-app",
+    title: "LocalDrive",
+    description: "A full-featured driving school platform that connects learners with certified instructors in their neighborhood. Features include instructor matching, secure online payments, lesson scheduling, and digital progress tracking for a modern driving education experience.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+    icon: Car,
+    color: "from-teal-500 to-cyan-600",
+    insights: [
+      "4.9/5 user rating achieved",
+      "Seamless booking & payment flow",
+      "Mobile-first responsive design"
+    ],
+    metric: { icon: Users, value: "4.9★", label: "User Rating" },
+    liveUrl: "https://localdriveapp.com",
+  },
+  {
+    id: "magverse-landing",
+    title: "MagVerse – Metaverse Landing Page",
+    description: "A visually striking landing page for a metaverse/gaming platform featuring bold dark-themed UI, animated hero section, and feature highlights for interoperability, security, and stability. Built with clean HTML, CSS, and JavaScript.",
+    tools: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
+    icon: Gamepad2,
+    color: "from-purple-600 to-violet-700",
+    insights: [
+      "Eye-catching dark-themed design",
+      "Smooth animations & transitions",
+      "Clear feature presentation layout"
+    ],
+    metric: { icon: Globe, value: "Live", label: "Deployed" },
+    liveUrl: "https://magverse.netlify.app/",
+  },
+  {
+    id: "eduford-landing-page",
+    title: "Eduford – School of Programming",
+    description: "A responsive landing page for an educational institution offering courses in Frontend Engineering, Backend Engineering, and Cloud Engineering. Features course listings, global campus showcase, student testimonials, and a clean, professional design.",
+    tools: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    icon: GraduationCap,
+    color: "from-blue-700 to-indigo-800",
+    insights: [
+      "Clean, professional educational layout",
+      "Multi-section responsive design",
+      "Course & campus showcase"
+    ],
+    metric: { icon: Globe, value: "Live", label: "Deployed" },
+    liveUrl: "https://khennyyb.github.io/Eduford_landing_page/",
+  },
+];
+
+// Combined for backward compatibility
+export const projects = [...dataAnalysisProjects, ...webDevelopmentProjects];
 
 // Sample data for each project
 export const projectDetailData = {
