@@ -18,7 +18,7 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
               <project.metric.icon className="w-5 h-5" />
               <span className="text-2xl font-bold">{project.metric.value}</span>
             </div>
-            <span className="text-sm text-foreground/70">{project.metric.label}</span>
+            {project.metric.label && <span className="text-sm text-foreground/70">{project.metric.label}</span>}
           </div>
         </div>
       </div>
