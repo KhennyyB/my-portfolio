@@ -55,9 +55,9 @@ const Footer = () => {
 
           {/* Bottom text */}
           <div className="mt-8 pt-8 border-t border-border/50 text-center">
-            <p className="text-xs text-muted-foreground">
-              Data Analyst • Frontend Developer • Excel Expert • SQL Developer • React • TypeScript • Business Intelligence
-            </p>
+            <p className="text-xs text-muted-foreground">Data Analyst • Frontend Developer • Excel Expert • SQL • React • TypeScript • Business Intelligence
+
+          </p>
           </div>
         </div>
       </div>
