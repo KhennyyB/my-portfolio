@@ -125,7 +125,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       {/* Customer LTV */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Customer Lifetime Value by Cohort</CardTitle>
+          <CardTitle className="text-primary">Customer Lifetime Value by Cohort</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
