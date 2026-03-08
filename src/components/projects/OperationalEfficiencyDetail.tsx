@@ -28,7 +28,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* Process Improvements */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Process Time Improvements (Minutes)</CardTitle>
+          <CardTitle className="text-primary">Process Time Improvements (Minutes)</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
