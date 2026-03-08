@@ -124,7 +124,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
 
         <Card variant="glass">
           <CardHeader>
-            <CardTitle>Field Accuracy Rates</CardTitle>
+            <CardTitle className="text-primary">Field Accuracy Rates</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
