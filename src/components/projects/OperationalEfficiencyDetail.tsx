@@ -130,7 +130,7 @@ const OperationalEfficiencyDetail = ({ data }: OperationalEfficiencyDetailProps)
       {/* SQL Queries */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>SQL Analysis Queries</CardTitle>
+          <CardTitle className="text-primary">SQL Analysis Queries</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

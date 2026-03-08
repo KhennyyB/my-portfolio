@@ -152,7 +152,7 @@ const EcommerceAnalyticsDetail = ({ data }: EcommerceAnalyticsDetailProps) => {
       {/* Story Insights */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Data Story: Key Findings</CardTitle>
+          <CardTitle className="text-primary">Data Story: Key Findings</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-3 gap-6">

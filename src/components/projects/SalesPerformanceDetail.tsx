@@ -101,7 +101,7 @@ const SalesPerformanceDetail = ({ data }: SalesPerformanceDetailProps) => {
       {/* Top Products */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Top Performing Products</CardTitle>
+          <CardTitle className="text-primary">Top Performing Products</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">

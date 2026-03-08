@@ -154,7 +154,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       {/* SQL Queries */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>SQL Queries Used</CardTitle>
+          <CardTitle className="text-primary">SQL Queries Used</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

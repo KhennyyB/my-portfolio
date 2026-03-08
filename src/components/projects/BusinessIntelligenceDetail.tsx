@@ -117,7 +117,7 @@ const BusinessIntelligenceDetail = ({ data }: BusinessIntelligenceDetailProps) =
       {/* Efficiency Radar */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Department Efficiency Overview</CardTitle>
+          <CardTitle className="text-primary">Department Efficiency Overview</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">

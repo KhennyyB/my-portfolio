@@ -113,7 +113,7 @@ const PatientMonitoringDetail = ({ data }: PatientMonitoringDetailProps) => {
       {/* Reporting Hours Saved */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Manual Hours Reduction</CardTitle>
+          <CardTitle className="text-primary">Manual Hours Reduction</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">

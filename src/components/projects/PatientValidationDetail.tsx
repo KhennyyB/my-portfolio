@@ -150,7 +150,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       {/* Summary Stats */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Validation Summary</CardTitle>
+          <CardTitle className="text-primary">Validation Summary</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
