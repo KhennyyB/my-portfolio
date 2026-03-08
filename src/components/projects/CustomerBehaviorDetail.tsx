@@ -96,7 +96,7 @@ const CustomerBehaviorDetail = ({ data }: CustomerBehaviorDetailProps) => {
       {/* Purchase Patterns */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Weekly Purchase Patterns</CardTitle>
+          <CardTitle className="text-primary">Weekly Purchase Patterns</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
