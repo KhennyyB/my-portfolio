@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { FileSpreadsheet, Database, BarChart3, LineChart, Code2, Globe, Server, Users } from "lucide-react";
+import { FileSpreadsheet, Database, BarChart3, LineChart, Code2, Globe, Server, Layout, Palette, Smartphone } from "lucide-react";
 const SkillsSection = () => {
   const skillCategories = [{
     title: "Microsoft Excel",
@@ -21,30 +21,40 @@ const SkillsSection = () => {
     icon: LineChart,
     color: "from-purple-500 to-pink-600",
     skills: ["Storytelling with Data", "KPI Design & Tracking", "Trend Analysis Charts", "Executive Reporting", "Visual Best Practices"]
+  }, {
+    title: "React & TypeScript",
+    icon: Code2,
+    color: "from-sky-500 to-blue-600",
+    skills: ["Component Architecture", "Hooks & State Management", "TypeScript Integration", "React Router & SPA", "API Integration"]
+  }, {
+    title: "HTML, CSS & Tailwind",
+    icon: Layout,
+    color: "from-rose-500 to-pink-600",
+    skills: ["Semantic HTML5", "CSS Grid & Flexbox", "Tailwind CSS Utility-First", "Responsive Design", "Cross-Browser Compatibility"]
   }];
   const additionalSkills = [{
-    icon: Code2,
-    name: "JavaScript",
-    level: "Intermediate"
-  }, {
-    icon: Globe,
-    name: "HTML/CSS",
-    level: "Advanced"
-  }, {
     icon: Server,
     name: "Git & GitHub",
     level: "Intermediate"
   }, {
     icon: Server,
-    name: "API",
+    name: "REST APIs",
+    level: "Intermediate"
+  }, {
+    icon: Palette,
+    name: "Figma",
+    level: "Basic"
+  }, {
+    icon: Smartphone,
+    name: "Responsive Design",
+    level: "Advanced"
+  }, {
+    icon: Globe,
+    name: "SEO Basics",
     level: "Intermediate"
   }, {
     icon: Code2,
-    name: "React",
-    level: "Intermediate"
-  }, {
-    icon: Globe,
-    name: "Tailwind CSS",
+    name: "Vite",
     level: "Intermediate"
   }];
   return <section id="skills" className="py-20 md:py-32 bg-secondary/30 relative">
@@ -59,14 +69,14 @@ const SkillsSection = () => {
               Technical <span className="gradient-text text-[#895bf5]">Skills</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Specialized in turning complex datasets into clear, actionable insights using 
-              industry-leading tools and technologies.
+              Specialized in data analysis and frontend development — turning complex datasets into 
+              clear insights and building modern, responsive web applications.
             </p>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-6" />
           </div>
 
           {/* Main Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {skillCategories.map((category, index) => <Card key={index} variant="glow" className="group overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
@@ -94,7 +104,7 @@ const SkillsSection = () => {
           {/* Additional Skills */}
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold text-foreground mb-2">Additional Skills</h3>
-            <p className="text-sm text-muted-foreground">Frontend development & collaboration tools</p>
+            <p className="text-sm text-muted-foreground">Tools & workflow proficiency</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">

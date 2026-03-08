@@ -32,6 +32,13 @@ const Footer = () => {
                 <span className="hidden sm:inline text-sm">LinkedIn</span>
               </a>
               
+              <a href="https://github.com/khennyyb" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <div className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 transition-all bg-white">
+                  <Github className="w-5 h-5" />
+                </div>
+                <span className="hidden sm:inline text-sm">GitHub</span>
+              </a>
+              
               <a href="mailto:khennyphresh@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 transition-all bg-white">
                   <Mail className="w-5 h-5" />
@@ -49,7 +56,7 @@ const Footer = () => {
           {/* Bottom text */}
           <div className="mt-8 pt-8 border-t border-border/50 text-center">
             <p className="text-xs text-muted-foreground">
-              Data Analyst • Excel Expert • SQL Developer • Business Intelligence
+              Data Analyst • Frontend Developer • Excel Expert • SQL Developer • React • TypeScript • Business Intelligence
             </p>
           </div>
         </div>
