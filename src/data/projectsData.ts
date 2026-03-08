@@ -134,6 +134,7 @@ export const webDevelopmentProjects = [
     ],
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://localdriveapp.com",
+    image: "/projects/localdrive-preview.png",
   },
   {
     id: "magverse-landing",
