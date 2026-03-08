@@ -64,7 +64,7 @@ const PatientValidationDetail = ({ data }: PatientValidationDetailProps) => {
       {/* Validation Results */}
       <Card variant="glass">
         <CardHeader>
-          <CardTitle>Validation Results by Category</CardTitle>
+          <CardTitle className="text-primary">Validation Results by Category</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-80">
