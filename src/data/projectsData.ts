@@ -166,6 +166,7 @@ export const webDevelopmentProjects = [
     ],
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://khennyyb.github.io/Eduford_landing_page/",
+    image: "/projects/eduford-preview.png",
   },
 ];
 
