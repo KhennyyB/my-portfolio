@@ -15,6 +15,9 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
             alt={`${project.title} preview`}
             className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
+            decoding="async"
+            width={600}
+            height={192}
           />
         </div>
       ) : (
