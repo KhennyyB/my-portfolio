@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown, Database, BarChart3, PieChart, TrendingUp, Code2, Layout } from "lucide-react";
+import { ArrowRight, Database, BarChart3, PieChart, TrendingUp, Code2, Layout } from "lucide-react";
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -88,7 +88,7 @@ const HeroSection = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-1/2 translate-y-1/2 right-6 animate-bounce rotate-90">
-          <ChevronDown className="w-6 h-6 text-muted-foreground" />
+          
         </div>
       </div>
     </section>;
