@@ -39,6 +39,9 @@ const ContactSection = () => {
     }
     setIsLoading(true);
     try {
+      if (!supabase) {
+        throw new Error("Contact form is currently unavailable. Please email me directly at khennyphresh@gmail.com");
+      }
       const {
         data,
         error
