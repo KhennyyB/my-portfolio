@@ -121,6 +121,22 @@ export const dataAnalysisProjects = [
 
 export const webDevelopmentProjects = [
   {
+    id: "lagoon-hospitals",
+    title: "Lagoon Hospitals – Healthcare Website",
+    description: "A professional multi-page website for Iwosan Lagoon Hospitals featuring appointment booking, service listings, facility showcases, and career pages. Built with a clean, modern design focused on trust and accessibility for a world-class healthcare provider.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+    icon: HeartPulse,
+    color: "from-teal-600 to-cyan-700",
+    insights: [
+      "Multi-page responsive healthcare platform",
+      "Appointment booking & service discovery",
+      "Professional trust-building design"
+    ],
+    metric: { icon: Globe, value: "Live", label: "" },
+    liveUrl: "https://lagoonhospitals.netlify.app/",
+    image: "/projects/lagoonhospitals-preview.jpg",
+  },
+  {
     id: "localdrive-app",
     title: "LocalDrive",
     description: "A full-featured driving platform that connects learners with certified instructors in their neighborhood. Features include instructor matching, secure online payments, lesson scheduling, and digital progress tracking for a modern driving education experience.",
