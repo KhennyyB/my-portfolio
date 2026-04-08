@@ -1,66 +1,69 @@
 import { Linkedin, Mail, Github, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   const currentYear = new Date().getFullYear();
-  return <footer className="py-12 border-t border-border relative">
+
+  return (
+    <footer className="py-10 border-t border-border relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo & Copyright */}
             <div className="text-center md:text-left">
-              <a href="#" className="text-xl font-bold tracking-tight inline-block mb-2">
-                <span className="gradient-text text-[#895bf5]">Ekene</span>
+              <a
+                href="#"
+                className="text-xl font-bold tracking-tight inline-block mb-1"
+              >
+                <span className="text-primary">Ekene</span>
                 <span className="text-foreground">.dev</span>
               </a>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 © {currentYear} Ekene Okoli. All rights reserved.
               </p>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4">
-              <a href="https://linkedin.com/in/ekene-okoli" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 transition-all bg-white">
-                  <Linkedin className="w-5 h-5" />
-                </div>
-                <span className="hidden sm:inline text-sm">LinkedIn</span>
-              </a>
-              
-              <a href="https://github.com/khennyyb" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 transition-all bg-white">
-                  <Github className="w-5 h-5" />
-                </div>
-                <span className="hidden sm:inline text-sm">GitHub</span>
-              </a>
-              
-              <a href="mailto:khennyphresh@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <div className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 transition-all bg-white">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <span className="hidden sm:inline text-sm">Email</span>
-              </a>
+            <div className="flex items-center gap-3">
+              {[
+                { href: "https://linkedin.com/in/ekene-okoli", icon: Linkedin, label: "LinkedIn" },
+                { href: "https://github.com/khennyyb", icon: Github, label: "GitHub" },
+                { href: "mailto:khennyphresh@gmail.com", icon: Mail, label: "Email" },
+              ].map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label={label}
+                >
+                  <div className="w-9 h-9 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 transition-all bg-card">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                </a>
+              ))}
             </div>
 
             {/* Back to top */}
-            <Button variant="outline" size="icon" onClick={scrollToTop} className="rounded-full" aria-label="Back to top">
-              <ArrowUp className="w-5 h-5" />
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={scrollToTop}
+              className="rounded-full w-9 h-9"
+              aria-label="Back to top"
+            >
+              <ArrowUp className="w-4 h-4" />
             </Button>
-          </div>
-
-          {/* Bottom text */}
-          <div className="mt-8 pt-8 border-t border-border/50 text-center">
-            <p className="text-xs text-muted-foreground">Data Analyst • Frontend Developer • Excel Expert • SQL • React • TypeScript • Business Intelligence
-
-          </p>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
