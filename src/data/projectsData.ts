@@ -120,6 +120,38 @@ export const dataAnalysisProjects = [
 ];
 
 export const webDevelopmentProjects = [
+    {
+    id: "jollof-station",
+    title: "Jollof Station",
+    description: "A vibrant food platform celebrating African cuisine, featuring menu browsing, restaurant discovery, and an appetizing visual experience. Designed with a warm, inviting aesthetic and smooth, intuitive navigation.",
+    tools: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    icon: Layout,
+    color: "from-orange-500 to-red-600",
+    insights: [
+      "Rich visual food-focused design",
+      "Intuitive menu & discovery flow",
+      "Mobile-friendly responsive layout"
+    ],
+    metric: { icon: Globe, value: "Live", label: "" },
+    liveUrl: "https://jollofstation.com",
+    image: "/projects/jollofstation-preview.png",
+  },
+  {
+    id: "iwosan-innovation-hub",
+    title: "Iwosan Innovation Hub",
+    description: "A professional web presence for an innovation hub connecting entrepreneurs, startups, and tech enthusiasts. Features program listings, event showcases, and community engagement sections with a modern, clean design.",
+    tools: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    icon: Layout,
+    color: "from-cyan-500 to-blue-600",
+    insights: [
+      "Modern professional hub layout",
+      "Program & event showcase sections",
+      "Community-focused user experience"
+    ],
+    metric: { icon: Globe, value: "Live", label: "" },
+    liveUrl: "https://iwosaninnovationhub.com",
+    image: "/projects/iwosaninnovationhub-preview.png",
+  },
   {
     id: "lagoon-hospitals",
     title: "Lagoon Hospitals – Healthcare Website",
