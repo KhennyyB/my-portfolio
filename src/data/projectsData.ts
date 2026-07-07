@@ -121,6 +121,22 @@ export const dataAnalysisProjects = [
 
 export const webDevelopmentProjects = [
     {
+    id: "nurses-rota",
+    title: "Nurses Rota – Iwosan Lagoon Hospitals",
+    description: "A workforce management system for nursing departments that automates rota generation, enforces ward safety rules, handles leave management, and provides a layered approval workflow. Built for Iwosan Lagoon Hospitals to ensure safer staffing.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Workforce Automation"],
+    icon: HeartPulse,
+    color: "from-sky-600 to-blue-800",
+    insights: [
+      "Automated rota generation for nurses",
+      "Ward safety rules & leave management",
+      "Layered approval workflow"
+    ],
+    metric: { icon: Globe, value: "Live", label: "" },
+    liveUrl: "https://nrota.iwosanhealth.com",
+    image: "/projects/nrota-preview.png",
+  },
+    {
     id: "jollof-station",
     title: "Jollof Station",
     description: "A vibrant food platform celebrating African cuisine, featuring menu browsing, restaurant discovery, and an appetizing visual experience. Designed with a warm, inviting aesthetic and smooth, intuitive navigation.",
