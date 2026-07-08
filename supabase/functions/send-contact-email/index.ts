@@ -1,6 +1,10 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+interface DenoEnv {
+  env?: {
+    get: (key: string) => string | undefined;
+  };
+}
 
-const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const RESEND_API_KEY = (globalThis as unknown as { Deno?: DenoEnv }).Deno?.env?.get("RESEND_API_KEY");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -84,7 +88,7 @@ const handler = async (req: Request): Promise<Response> => {
                   </div>
                 </div>
                 <div class="footer">
-                  Sent from your Data Analyst Portfolio Website
+                  Sent from your Data Analyst & Frontend Developer Portfolio Website
                 </div>
               </div>
             </body>
@@ -163,10 +167,11 @@ const handler = async (req: Request): Promise<Response> => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
     console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: message }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -175,4 +180,10 @@ const handler = async (req: Request): Promise<Response> => {
   }
 };
 
-serve(handler);
+const deno = (globalThis as unknown as {
+  Deno?: {
+    serve: (handler: (req: Request) => Promise<Response>) => void;
+  };
+}).Deno;
+
+deno?.serve(handler);
