@@ -117,6 +117,10 @@ const ProjectCarousel = ({
   const loopStartRef = useRef<HTMLDivElement>(null);
   const loopWidthRef = useRef(0);
   const pausedRef = useRef(false);
+  // Tracked separately from el.scrollLeft because some mobile browsers round
+  // scrollLeft to whole pixels, which would swallow the sub-1px increments
+  // below if we accumulated by reading the DOM value back each frame.
+  const scrollPositionRef = useRef(0);
 
   // The item list is rendered twice back-to-back so the auto-scroll can wrap
   // from the end of the first (real) set into the identical second (cloned)
@@ -142,11 +146,15 @@ const ProjectCarousel = ({
       const el = scrollRef.current;
       const loopWidth = loopWidthRef.current;
       if (el && loopWidth > 0) {
-        if (!pausedRef.current) {
-          el.scrollLeft += AUTO_SCROLL_SPEED;
-        }
-        if (el.scrollLeft >= loopWidth) {
-          el.scrollLeft -= loopWidth;
+        if (pausedRef.current) {
+          // Stay in sync with any manual scrolling that happened while paused.
+          scrollPositionRef.current = el.scrollLeft;
+        } else {
+          scrollPositionRef.current += AUTO_SCROLL_SPEED;
+          if (scrollPositionRef.current >= loopWidth) {
+            scrollPositionRef.current -= loopWidth;
+          }
+          el.scrollLeft = scrollPositionRef.current;
         }
       }
       rafId = requestAnimationFrame(step);
