@@ -167,6 +167,9 @@ const ProjectCarousel = ({
       className="relative"
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
+      onTouchStart={() => (pausedRef.current = true)}
+      onTouchEnd={() => (pausedRef.current = false)}
+      onTouchCancel={() => (pausedRef.current = false)}
     >
       <div
         ref={scrollRef}
