@@ -1,14 +1,24 @@
+import { cloneElement, forwardRef, useEffect, useRef } from "react";
+import type { HTMLAttributes, ReactElement } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { cn } from "@/lib/utils";
 import { dataAnalysisProjects, webDevelopmentProjects } from "@/data/projectsData";
 
-const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }) => (
+const ProjectCard = forwardRef<
+  HTMLDivElement,
+  { project: any; onCtaClick: () => void } & HTMLAttributes<HTMLDivElement>
+>(({ project, onCtaClick, className, ...rest }, ref) => (
   <Card
+    ref={ref}
     variant="glow"
-    className="group overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
-    onClick={onClick}
+    className={cn(
+      "group w-[300px] sm:w-[340px] flex-shrink-0 overflow-hidden transition-transform hover:scale-[1.02]",
+      className
+    )}
+    {...rest}
   >
     <CardContent className="p-0">
       {/* Preview Image */}
@@ -80,14 +90,117 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
 
         {/* View Project Button */}
         <div className="pt-2">
-          <span className="text-sm text-primary font-medium group-hover:underline">
+          <button
+            type="button"
+            onClick={onCtaClick}
+            className="text-sm text-primary font-medium hover:text-primary/80 transition-colors"
+          >
             {project.liveUrl ? "Visit Live Site →" : "View Full Analysis →"}
-          </span>
+          </button>
         </div>
       </div>
     </CardContent>
   </Card>
-);
+));
+ProjectCard.displayName = "ProjectCard";
+
+const AUTO_SCROLL_SPEED = 0.6; // pixels per animation frame
+
+const ProjectCarousel = ({
+  items,
+  renderCard,
+}: {
+  items: any[];
+  renderCard: (project: any) => ReactElement;
+}) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const loopStartRef = useRef<HTMLDivElement>(null);
+  const loopWidthRef = useRef(0);
+  const pausedRef = useRef(false);
+
+  // The item list is rendered twice back-to-back so the auto-scroll can wrap
+  // from the end of the first (real) set into the identical second (cloned)
+  // set with no visible jump, then silently rewind by exactly one set's width.
+  useEffect(() => {
+    const measure = () => {
+      const scrollEl = scrollRef.current;
+      const loopStartEl = loopStartRef.current;
+      if (!scrollEl || !loopStartEl) return;
+      const scrollRect = scrollEl.getBoundingClientRect();
+      const loopStartRect = loopStartEl.getBoundingClientRect();
+      loopWidthRef.current = loopStartRect.left - scrollRect.left + scrollEl.scrollLeft;
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [items]);
+
+  useEffect(() => {
+    let rafId: number;
+
+    const step = () => {
+      const el = scrollRef.current;
+      const loopWidth = loopWidthRef.current;
+      if (el && loopWidth > 0) {
+        if (!pausedRef.current) {
+          el.scrollLeft += AUTO_SCROLL_SPEED;
+        }
+        if (el.scrollLeft >= loopWidth) {
+          el.scrollLeft -= loopWidth;
+        }
+      }
+      rafId = requestAnimationFrame(step);
+    };
+
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  const scrollByAmount = (direction: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: el.clientWidth * 0.8 * direction, behavior: "smooth" });
+  };
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => (pausedRef.current = true)}
+      onMouseLeave={() => (pausedRef.current = false)}
+    >
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {items.map((project, index) => cloneElement(renderCard(project), { key: `original-${index}` }))}
+        {items.map((project, index) =>
+          cloneElement(renderCard(project), {
+            key: `clone-${index}`,
+            "aria-hidden": true,
+            ...(index === 0 ? { ref: loopStartRef } : {}),
+          })
+        )}
+      </div>
+
+      <button
+        type="button"
+        aria-label="Scroll left"
+        onClick={() => scrollByAmount(-1)}
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 hidden sm:flex w-10 h-10 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        type="button"
+        aria-label="Scroll right"
+        onClick={() => scrollByAmount(1)}
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 hidden sm:flex w-10 h-10 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+  );
+};
 
 const ProjectsSection = () => {
   const navigate = useNavigate();
@@ -115,15 +228,12 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground text-sm mb-8">
               Excel, SQL, Power BI, and data visualization work.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {dataAnalysisProjects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  project={project}
-                  onClick={() => navigate(`/project/${project.id}`)}
-                />
-              ))}
-            </div>
+            <ProjectCarousel
+              items={dataAnalysisProjects}
+              renderCard={(project) => (
+                <ProjectCard project={project} onCtaClick={() => navigate(`/project/${project.id}`)} />
+              )}
+            />
           </div>
 
           {/* Web Development */}
@@ -132,12 +242,12 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground text-sm mb-8">
               Frontend projects built with React, TypeScript, and responsive design.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {webDevelopmentProjects.map((project, index) => (
+            <ProjectCarousel
+              items={webDevelopmentProjects}
+              renderCard={(project) => (
                 <ProjectCard
-                  key={index}
                   project={project}
-                  onClick={() => {
+                  onCtaClick={() => {
                     if (project.liveUrl) {
                       window.open(project.liveUrl, "_blank", "noopener,noreferrer");
                     } else {
@@ -145,8 +255,8 @@ const ProjectsSection = () => {
                     }
                   }}
                 />
-              ))}
-            </div>
+              )}
+            />
           </div>
 
           {/* CTA */}

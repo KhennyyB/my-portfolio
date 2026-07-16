@@ -1,9 +1,68 @@
+import { Fragment, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const HEADSHOT = "/headshot.png";
 
+const GREETING_PREFIX = "👋 Hi, I'm ";
+const GREETING_NAME = "Ekene";
+const GREETING_LINE = GREETING_PREFIX + GREETING_NAME;
+const HEADLINE_LINE_1 = "Data Analyst &";
+const HEADLINE_LINE_2 = "Frontend Developer";
+const TYPED_LINES = [GREETING_LINE, HEADLINE_LINE_1, HEADLINE_LINE_2];
+
+const TYPING_SPEED = 70;
+const PAUSE_BETWEEN_LINES = 300;
+const PAUSE_BEFORE_RESTART = 2200;
+
+const useTypewriterLines = (lines: string[]) => {
+  const [displayedLines, setDisplayedLines] = useState<string[]>(() => lines.map(() => ""));
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    if (activeIndex >= lines.length) {
+      timeoutId = setTimeout(() => {
+        setDisplayedLines(lines.map(() => ""));
+        setActiveIndex(0);
+      }, PAUSE_BEFORE_RESTART);
+      return () => clearTimeout(timeoutId);
+    }
+
+    // Split into Unicode code points so a multi-byte emoji is never sliced mid-character.
+    const chars = Array.from(lines[activeIndex]);
+    let charIndex = 0;
+
+    const typeNextChar = () => {
+      charIndex += 1;
+      setDisplayedLines((prev) => {
+        const next = [...prev];
+        next[activeIndex] = chars.slice(0, charIndex).join("");
+        return next;
+      });
+
+      if (charIndex < chars.length) {
+        timeoutId = setTimeout(typeNextChar, TYPING_SPEED);
+      } else {
+        timeoutId = setTimeout(() => setActiveIndex((i) => i + 1), PAUSE_BETWEEN_LINES);
+      }
+    };
+
+    timeoutId = setTimeout(typeNextChar, TYPING_SPEED);
+    return () => clearTimeout(timeoutId);
+  }, [activeIndex, lines]);
+
+  return { displayedLines, activeIndex };
+};
+
 const HeroSection = () => {
+  const { displayedLines, activeIndex } = useTypewriterLines(TYPED_LINES);
+  const typedGreeting = displayedLines[0];
+  const greetingPrefixShown =
+    typedGreeting.length <= GREETING_PREFIX.length ? typedGreeting : GREETING_PREFIX;
+  const greetingNameShown =
+    typedGreeting.length > GREETING_PREFIX.length ? typedGreeting.slice(GREETING_PREFIX.length) : "";
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -93,15 +152,33 @@ const HeroSection = () => {
           {/* Greeting */}
           <div className="opacity-0 animate-slide-up delay-200" style={{ animationFillMode: 'forwards' }}>
             <p className="text-xl md:text-2xl font-semibold text-muted-foreground mt-6 mb-2 tracking-wide">
-              👋 Hi, I'm <span className="text-primary font-bold text-2xl md:text-3xl">Ekene</span>
+              {greetingPrefixShown}
+              <span className="text-primary font-bold text-2xl md:text-3xl">{greetingNameShown}</span>
+              {activeIndex === 0 && (
+                <span className="inline-block w-[2px] md:w-[3px] h-[0.85em] bg-current ml-1 align-middle animate-pulse" />
+              )}
             </p>
           </div>
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2 animate-slide-up">
-            <span className="text-foreground">Data Analyst &</span>
-            <br />
-            <span className="text-primary">Frontend Developer</span>
+            {[HEADLINE_LINE_1, HEADLINE_LINE_2].map((line, i) => {
+              const lineIndex = i + 1;
+              const isActiveLine =
+                activeIndex === lineIndex ||
+                (activeIndex >= TYPED_LINES.length && lineIndex === TYPED_LINES.length - 1);
+              return (
+                <Fragment key={line}>
+                  <span className={i === 0 ? "text-foreground" : "text-primary"}>
+                    {displayedLines[lineIndex]}
+                    {isActiveLine && (
+                      <span className="inline-block w-[2px] md:w-[3px] h-[0.85em] bg-current ml-1 align-middle animate-pulse" />
+                    )}
+                  </span>
+                  {i === 0 && <br />}
+                </Fragment>
+              );
+            })}
           </h1>
 
           {/* Subtitle */}
