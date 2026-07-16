@@ -21,13 +21,19 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunks
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
-          'vendor-charts': ['recharts'],
-          'vendor-excel': ['exceljs'],
-          'vendor-utils': ['date-fns', 'clsx', 'tailwind-merge', 'class-variance-authority'],
+        manualChunks(id) {
+          const vendorChunks: Record<string, string[]> = {
+            'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+            'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
+            'vendor-charts': ['recharts'],
+            'vendor-excel': ['exceljs'],
+            'vendor-utils': ['date-fns', 'clsx', 'tailwind-merge', 'class-variance-authority'],
+          };
+          for (const [chunk, pkgs] of Object.entries(vendorChunks)) {
+            if (pkgs.some((pkg) => id.includes(`node_modules/${pkg}/`))) {
+              return chunk;
+            }
+          }
         },
       },
     },

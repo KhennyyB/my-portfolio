@@ -15,7 +15,7 @@ const ProjectCard = forwardRef<
     ref={ref}
     variant="glow"
     className={cn(
-      "group w-[300px] sm:w-[340px] flex-shrink-0 overflow-hidden transition-transform hover:scale-[1.02]",
+      "group w-[220px] sm:w-[260px] md:w-[300px] lg:w-[340px] flex-shrink-0 overflow-hidden transition-transform hover:scale-[1.02]",
       className
     )}
     {...rest}
@@ -23,7 +23,7 @@ const ProjectCard = forwardRef<
     <CardContent className="p-0">
       {/* Preview Image */}
       {project.image ? (
-        <div className="w-full h-48 overflow-hidden border-b border-border">
+        <div className="w-full h-28 sm:h-32 md:h-36 overflow-hidden border-b border-border">
           <img
             src={project.image}
             alt={`${project.title} preview`}
@@ -35,18 +35,18 @@ const ProjectCard = forwardRef<
           />
         </div>
       ) : (
-        <div className="bg-card p-6 border-b border-border">
+        <div className="bg-card p-4 border-b border-border">
           <div className="flex items-center justify-between">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-              <project.icon className="w-7 h-7 text-primary" />
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <project.icon className="w-5 h-5 text-primary" />
             </div>
             <div className="text-right">
               <div className="flex items-center gap-2 text-foreground/90">
-                <project.metric.icon className="w-5 h-5" />
-                <span className="text-2xl font-bold">{project.metric.value}</span>
+                <project.metric.icon className="w-4 h-4" />
+                <span className="text-xl font-bold">{project.metric.value}</span>
               </div>
               {project.metric.label && (
-                <span className="text-sm text-foreground/70">{project.metric.label}</span>
+                <span className="text-xs text-foreground/70">{project.metric.label}</span>
               )}
             </div>
           </div>
@@ -54,21 +54,21 @@ const ProjectCard = forwardRef<
       )}
 
       {/* Content */}
-      <div className="p-5 space-y-3">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+      <div className="p-4 space-y-2">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1">
             {project.title}
           </h3>
-          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          <ExternalLink className="w-4 h-4 flex-shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
         </div>
-        <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+        <p className="text-muted-foreground text-xs leading-normal line-clamp-2">{project.description}</p>
 
         {/* Tools */}
-        <div className="flex flex-wrap gap-2">
-          {project.tools.map((tool: string, toolIndex: number) => (
+        <div className="flex flex-wrap gap-1.5">
+          {project.tools.slice(0, 3).map((tool: string, toolIndex: number) => (
             <span
               key={toolIndex}
-              className="px-3 py-1 rounded-full text-xs font-medium text-foreground border border-border bg-card"
+              className="px-2 py-0.5 rounded-full text-[10px] font-medium text-foreground border border-border bg-card"
             >
               {tool}
             </span>
@@ -76,24 +76,24 @@ const ProjectCard = forwardRef<
         </div>
 
         {/* Key Insights */}
-        <div className="pt-4 border-t border-border">
-          <h4 className="text-sm font-semibold text-foreground mb-3">Key Insights:</h4>
-          <ul className="space-y-2">
-            {project.insights.map((insight: string, insightIndex: number) => (
-              <li key={insightIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="pt-2 border-t border-border">
+          <h4 className="text-xs font-semibold text-foreground mb-1.5">Key Insights:</h4>
+          <ul className="space-y-1">
+            {project.insights.slice(0, 2).map((insight: string, insightIndex: number) => (
+              <li key={insightIndex} className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                {insight}
+                <span className="line-clamp-1">{insight}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* View Project Button */}
-        <div className="pt-2">
+        <div className="pt-1">
           <button
             type="button"
             onClick={onCtaClick}
-            className="text-sm text-primary font-medium hover:text-primary/80 transition-colors"
+            className="text-xs text-primary font-medium hover:text-primary/80 transition-colors"
           >
             {project.liveUrl ? "Visit Live Site →" : "View Full Analysis →"}
           </button>
@@ -186,17 +186,17 @@ const ProjectCarousel = ({
         type="button"
         aria-label="Scroll left"
         onClick={() => scrollByAmount(-1)}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 hidden sm:flex w-10 h-10 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
       >
-        <ChevronLeft className="w-5 h-5" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
       <button
         type="button"
         aria-label="Scroll right"
         onClick={() => scrollByAmount(1)}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 hidden sm:flex w-10 h-10 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 flex w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
       >
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
     </div>
   );
