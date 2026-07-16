@@ -105,12 +105,12 @@ const ProjectDetail = () => {
       </header>
 
       {/* Hero Section */}
-      <section className={`bg-white py-16 border border-gray-200`}>
+      <section className="bg-card py-16 border border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                <project.icon className="w-8 h-8 text-foreground" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 backdrop-blur-sm flex items-center justify-center">
+                <project.icon className="w-8 h-8 text-primary" />
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -128,7 +128,7 @@ const ProjectDetail = () => {
               {project.tools.map((tool, index) => (
                 <span
                   key={index}
-                  className="px-4 py-1.5 rounded-full bg-foreground/20 backdrop-blur-sm text-sm font-medium text-foreground"
+                  className="px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm text-sm font-medium text-primary"
                 >
                   {tool}
                 </span>
