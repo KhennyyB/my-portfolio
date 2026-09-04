@@ -6,7 +6,7 @@ const AboutSection = () => {
     {
       icon: Briefcase,
       title: "Enterprise Analyst",
-      description: "Currently at Iwosan Lagoon Hospitals, driving data-driven decisions",
+      description: "Efficiently driving data-driven decisions",
     },
     {
       icon: Code2,
@@ -51,7 +51,7 @@ const AboutSection = () => {
             {/* Bio */}
             <div className="space-y-4 md:space-y-5 px-2 md:px-0">
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                I am an Application/Data Analyst and Frontend Web Developer with over 4 years of
+                I am an Application/Data Analyst and a Frontend Web Developer with over 4 years of
                 experience transforming raw data into actionable business insights and building modern
                 web applications.
               </p>

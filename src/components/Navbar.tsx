@@ -46,7 +46,7 @@ const Navbar = () => {
           });
         }}>
             <span className="gradient-text text-[#895bf5]">Ekene</span>
-            <span className="text-foreground">.dev</span>
+            <span className="text-foreground">-dev</span>
           </a>
 
           {/* Desktop Navigation */}

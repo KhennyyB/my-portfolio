@@ -20,7 +20,7 @@ const Footer = () => {
                 className="text-xl font-bold tracking-tight inline-block mb-1"
               >
                 <span className="text-primary">Ekene</span>
-                <span className="text-foreground">.dev</span>
+                <span className="text-foreground">-dev</span>
               </a>
               <p className="text-xs text-muted-foreground">
                 © {currentYear} Ekene Okoli. All rights reserved.

@@ -83,12 +83,12 @@ const SkillsSection = () => {
   ];
 
   const additionalSkills = [
-    { icon: Server, name: "Git & GitHub", level: "Intermediate" },
+    { icon: Server, name: "Git & GitHub", level: "Advanced" },
     { icon: Server, name: "REST APIs", level: "Intermediate" },
-    { icon: Palette, name: "Figma", level: "Basic" },
+    { icon: Palette, name: "Figma", level: "Intermediate" },
     { icon: Smartphone, name: "Responsive Design", level: "Advanced" },
-    { icon: Globe, name: "SEO Basics", level: "Intermediate" },
-    { icon: Code2, name: "Vite", level: "Intermediate" },
+    { icon: Globe, name: "SEO Basics", level: "Advanced" },
+    { icon: Code2, name: "CI/CD", level: "Advanced" },
   ];
 
   return (
