@@ -1,0 +1,259 @@
+- generic [ref=f1e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f1e3]:
+    - link "Skip to projects" [ref=f1e4] [cursor=pointer]:
+      - /url: "#work"
+    - banner:
+      - navigation "Main navigation" [ref=f1e5]:
+        - link "Ekene Okoli, back to top" [ref=f1e6] [cursor=pointer]:
+          - /url: "#top"
+          - text: eo.
+        - link "Work" [ref=f1e7] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=f1e10] [cursor=pointer]:
+          - /url: "#about"
+        - link "Resume" [ref=f1e14] [cursor=pointer]:
+          - /url: /Ekene_Okoli_Resume.pdf
+        - link "Get in Touch" [ref=f1e18] [cursor=pointer]:
+          - /url: mailto:khennyphresh@gmail.com
+    - main [ref=f1e20]:
+      - generic [ref=f1e21]:
+        - generic [ref=f1e22]:
+          - paragraph [ref=f1e23]: Hey, I’m Ekene
+          - heading "Creative data analyst and frontend developer" [level=1] [ref=f1e24]:
+            - generic [ref=f1e25]: Creative
+            - generic [ref=f1e26]:
+              - text: Devel
+              - switch "Switch to dark mode" [ref=f1e27] [cursor=pointer]
+              - text: per
+            - generic [ref=f1e35]: Data analyst
+          - paragraph [ref=f1e36]:
+            - text: Turning complex data into
+            - strong [ref=f1e37]: clear business insights
+            - text: and building
+            - strong [ref=f1e38]: interfaces people love to use.
+        - generic [aria-hidden] [ref=f1e39]:
+          - generic [ref=f1e40]: Data analysis
+          - generic [ref=f1e43]: SQL
+          - generic [ref=f1e48]: Power BI
+          - generic [ref=f1e53]: React
+          - generic [ref=f1e60]: TypeScript
+          - generic [ref=f1e65]: Excel
+          - generic [ref=f1e70]: Storytelling
+          - generic [ref=f1e77]: Dashboards
+          - generic [ref=f1e82]: Problem solving
+          - generic [ref=f1e87]: Web development
+          - generic [ref=f1e94]: Data validation
+      - region "Project previews" [ref=f1e132]:
+        - generic [ref=f1e133]:
+          - generic [ref=f1e134]:
+            - img "Nurses Rota – Iwosan Lagoon Hospitals preview"
+          - generic [ref=f1e135]:
+            - img "Jollof Station preview"
+          - generic [ref=f1e136]:
+            - img "Iwosan Innovation Hub preview"
+          - generic [ref=f1e137]:
+            - img "Lagoon Hospitals – Healthcare Website preview"
+          - generic [ref=f1e138]:
+            - img "LocalDrive preview"
+          - generic [ref=f1e139]:
+            - img "MagVerse – Metaverse Landing Page preview"
+        - button "Pause project gallery" [ref=f1e140] [cursor=pointer]
+      - region [ref=f1e144]:
+        - generic [ref=f1e145]:
+          - heading "What I do" [level=2] [ref=f1e146]
+          - generic [ref=f1e147]:
+            - generic [ref=f1e148]:
+              - text: From raw data to decisions
+              - heading "Data Analysis" [level=3] [ref=f1e149]
+            - generic [ref=f1e150]:
+              - text: Components, interfaces, detail
+              - heading "Frontend" [level=3] [ref=f1e151]
+            - generic [ref=f1e152]:
+              - text: Interactive business insights
+              - heading "Dashboards" [level=3] [ref=f1e153]
+            - generic [ref=f1e154]:
+              - text: Queries, models, integrity
+              - heading "SQL" [level=3] [ref=f1e155]
+            - generic [ref=f1e156]:
+              - text: Clear stories behind the numbers
+              - heading "Visualization" [level=3] [ref=f1e157]
+            - generic [ref=f1e158]:
+              - text: Less repetition, more impact
+              - heading "Automation" [level=3] [ref=f1e159]
+        - paragraph [ref=f1e160]:
+          - generic [ref=f1e161]: My
+          - generic [ref=f1e163]: work
+          - generic [ref=f1e165]: spans
+          - generic [ref=f1e167]: data
+          - generic [ref=f1e169]: analysis,
+          - generic [ref=f1e171]: business
+          - generic [ref=f1e173]: intelligence,
+          - generic [ref=f1e175]: and
+          - generic [ref=f1e177]: frontend
+          - generic [ref=f1e179]: development,
+          - generic [ref=f1e181]: transforming
+          - generic [ref=f1e183]: complex
+          - generic [ref=f1e185]: problems
+          - generic [ref=f1e187]: into
+          - generic [ref=f1e189]: clear
+          - generic [ref=f1e191]: insights
+          - generic [ref=f1e193]: and
+          - generic [ref=f1e195]: intuitive,
+          - generic [ref=f1e197]: accessible
+          - generic [ref=f1e199]: digital
+          - generic [ref=f1e201]: experiences.
+      - generic [ref=f1e203]:
+        - generic [ref=f1e204]:
+          - generic [ref=f1e205]:
+            - paragraph [ref=f1e206]: Selected works
+            - heading "Case studies" [level=2] [ref=f1e207]
+          - paragraph [ref=f1e208]: A selection of the dashboards, platforms, and digital experiences I’ve built. Explore the thinking and work behind each project.
+        - generic "Project categories" [ref=f1e209]:
+          - button "Web development" [pressed] [ref=f1e210] [cursor=pointer]
+          - button "Data analysis" [ref=f1e211] [cursor=pointer]
+        - generic [ref=f1e212]:
+          - link [ref=f1e213] [cursor=pointer]:
+            - /url: /project/nurses-rota
+            - generic [ref=f1e214]:
+              - img "Nurses Rota – Iwosan Lagoon Hospitals website" [ref=f1e215]
+              - generic [ref=f1e216]: View project
+            - heading "Nurses Rota – Iwosan Lagoon Hospitals" [level=3] [ref=f1e221]
+            - paragraph [ref=f1e225]: React · TypeScript · Tailwind CSS
+          - link [ref=f1e226] [cursor=pointer]:
+            - /url: /project/jollof-station
+            - generic [ref=f1e227]:
+              - img "Jollof Station website" [ref=f1e228]
+              - generic [ref=f1e229]: View project
+            - heading "Jollof Station" [level=3] [ref=f1e234]
+            - paragraph [ref=f1e238]: HTML · CSS · JavaScript
+          - link [ref=f1e239] [cursor=pointer]:
+            - /url: /project/iwosan-innovation-hub
+            - generic [ref=f1e240]:
+              - img "Iwosan Innovation Hub website" [ref=f1e241]
+              - generic [ref=f1e242]: View project
+            - heading "Iwosan Innovation Hub" [level=3] [ref=f1e247]
+            - paragraph [ref=f1e251]: HTML · CSS · JavaScript
+          - link [ref=f1e252] [cursor=pointer]:
+            - /url: /project/lagoon-hospitals
+            - generic [ref=f1e253]:
+              - img "Lagoon Hospitals – Healthcare Website website" [ref=f1e254]
+              - generic [ref=f1e255]: View project
+            - heading "Lagoon Hospitals – Healthcare Website" [level=3] [ref=f1e260]
+            - paragraph [ref=f1e264]: React · TypeScript · Tailwind CSS
+          - link [ref=f1e265] [cursor=pointer]:
+            - /url: /project/localdrive-app
+            - generic [ref=f1e266]:
+              - img "LocalDrive website" [ref=f1e267]
+              - generic [ref=f1e268]: View project
+            - heading "LocalDrive" [level=3] [ref=f1e273]
+            - paragraph [ref=f1e277]: React · TypeScript · Tailwind CSS
+          - link [ref=f1e278] [cursor=pointer]:
+            - /url: /project/magverse-landing
+            - generic [ref=f1e279]:
+              - img "MagVerse – Metaverse Landing Page website" [ref=f1e280]
+              - generic [ref=f1e281]: View project
+            - heading "MagVerse – Metaverse Landing Page" [level=3] [ref=f1e286]
+            - paragraph [ref=f1e290]: HTML · CSS · JavaScript
+          - link [ref=f1e291] [cursor=pointer]:
+            - /url: /project/eduford-landing-page
+            - generic [ref=f1e292]:
+              - img "Eduford – School of Programming website" [ref=f1e293]
+              - generic [ref=f1e294]: View project
+            - heading "Eduford – School of Programming" [level=3] [ref=f1e299]
+            - paragraph [ref=f1e303]: HTML · CSS · JavaScript
+      - generic [ref=f1e304]:
+        - generic [ref=f1e305]:
+          - paragraph [ref=f1e306]: About me
+          - heading [level=2] [ref=f1e307]:
+            - text: Data analyst & frontend developer with
+            - emphasis [ref=f1e308]: 4+ years
+            - text: at the intersection of data, business, and technology.
+          - generic [ref=f1e309]:
+            - generic [ref=f1e310]: Problem solver
+            - generic [ref=f1e311]: Creative thinker
+            - generic [ref=f1e312]: Systems thinker
+            - generic [ref=f1e313]: Detail obsessed
+          - paragraph [ref=f1e314]: I’m Ekene Okoli, an Application/Data Analyst and Frontend Web Developer based in Lagos, Nigeria. I turn raw data into actionable business insights and build modern web applications with React and TypeScript.
+          - paragraph [ref=f1e315]: From analyzing operational data and validating patient records to building responsive interfaces, I enjoy solving complex business problems and making everyday work simpler.
+          - link "More about my experience" [ref=f1e316] [cursor=pointer]:
+            - /url: /Ekene_Okoli_Resume.pdf
+        - figure "Ekene Okoli / Lagos, Nigeria" [ref=f1e320]:
+          - img "Ekene Okoli" [ref=f1e323]
+      - generic [ref=f1e326]:
+        - generic [ref=f1e327]:
+          - paragraph [ref=f1e328]: Experience & expertise
+          - heading "The journey so far" [level=2] [ref=f1e329]
+        - generic [ref=f1e331]:
+          - article [ref=f1e332]:
+            - generic [ref=f1e333]: 01 / ANALYZE
+            - generic [ref=f1e335]:
+              - heading "Data & business intelligence" [level=3] [ref=f1e340]
+              - paragraph [ref=f1e341]: Turning raw data into actionable insights with Excel, SQL and Power BI. From KPI tracking to operational reporting, I help teams make informed decisions.
+              - generic [ref=f1e342]: Excel · SQL · Power BI
+          - article [ref=f1e343]:
+            - generic [ref=f1e344]: 02 / BUILD
+            - generic [ref=f1e346]:
+              - heading "Interfaces people use" [level=3] [ref=f1e351]
+              - paragraph [ref=f1e352]: Responsive, accessible web applications built with React and TypeScript. Thoughtful interfaces for healthcare, education, food and everyday services.
+              - generic [ref=f1e353]: React · TypeScript · Tailwind CSS
+          - article [ref=f1e354]:
+            - generic [ref=f1e355]: 03 / IMPROVE
+            - generic [ref=f1e357]:
+              - heading "Better systems, better outcomes" [level=3] [ref=f1e364]
+              - paragraph [ref=f1e365]: From automated nursing rotas to patient data validation, I build tools that reduce manual work and improve the quality of everyday operations.
+              - generic [ref=f1e366]: Automation · Validation · Healthcare
+          - article [ref=f1e367]:
+            - generic [ref=f1e368]: 04 / KEEP LEARNING
+            - generic [ref=f1e370]:
+              - heading "Curiosity meets craft" [level=3] [ref=f1e376]
+              - paragraph [ref=f1e377]: ALX Africa certified in data analysis and software engineering. I bring analytical thinking and attention to detail to every project.
+              - generic [ref=f1e378]: Problem solving · Continuous learning
+      - generic [ref=f1e379]:
+        - paragraph [ref=f1e380]: The work, in numbers
+        - heading [level=2] [ref=f1e381]:
+          - text: Thoughtful work.
+          - emphasis [ref=f1e382]: Real impact.
+        - generic [ref=f1e383]:
+          - generic [ref=f1e384]:
+            - strong [ref=f1e385]: 4+
+            - paragraph [ref=f1e386]: Years of experience
+          - generic [ref=f1e387]:
+            - strong [ref=f1e388]: 15+
+            - paragraph [ref=f1e389]: Projects delivered
+          - generic [ref=f1e390]:
+            - strong [ref=f1e391]: 15%
+            - paragraph [ref=f1e392]: Operational efficiency increase
+      - generic [ref=f1e393]:
+        - paragraph [ref=f1e394]: Have something in mind?
+        - heading "Let’s make great things." [level=2] [ref=f1e395]:
+          - text: Let’s make
+          - generic [ref=f1e449]: great
+          - text: things.
+        - generic [ref=f1e397]:
+          - generic [ref=f1e398]:
+            - link "khennyphresh@gmail.com" [ref=f1e399] [cursor=pointer]:
+              - /url: mailto:khennyphresh@gmail.com
+            - generic [ref=f1e403]:
+              - link "LinkedIn" [ref=f1e404] [cursor=pointer]:
+                - /url: https://linkedin.com/in/ekene-okoli
+              - link "GitHub" [ref=f1e409] [cursor=pointer]:
+                - /url: https://github.com/khennyyb
+              - button "Send a message" [ref=f1e413] [cursor=pointer]
+          - link "Get in touch" [ref=f1e417] [cursor=pointer]:
+            - /url: mailto:khennyphresh@gmail.com
+            - img [aria-hidden] [ref=f1e418]:
+              - generic [ref=f1e419]: GET IN TOUCH • GET IN TOUCH •
+          - paragraph [ref=f1e424]:
+            - text: Ready to discuss your project?I’d
+            - emphasis [ref=f1e425]: love
+            - text: to
+            - emphasis [ref=f1e426]: hear
+            - text: about it.
+        - generic [ref=f1e427]:
+          - generic [ref=f1e428]: © 2026 Ekene Okoli.
+          - generic [ref=f1e429]: Built with care by me
+          - link "Back to top" [ref=f1e430] [cursor=pointer]:
+            - /url: "#top"

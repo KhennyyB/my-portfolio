@@ -1,0 +1,217 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#top"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Back to top" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+        - img "GD" [ref=e6]
+      - generic [ref=e7]:
+        - link "Work" [ref=e8] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: "#about"
+        - link "Resume" [ref=e19] [cursor=pointer]:
+          - /url: /resume/Grace_Daniyan_CV.pdf
+      - link "Get in Touch" [ref=e24] [cursor=pointer]:
+        - /url: mailto:elohodaniyan@gmail.com
+  - main [ref=e25]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: Hey, I’m
+        - generic [ref=e31]: Grace
+      - heading "Creative Product Designer" [level=1] [ref=e32]:
+        - generic [aria-hidden] [ref=e33]: Creative
+        - generic [ref=e34]:
+          - generic [aria-hidden] [ref=e35]: PR
+          - switch "Switch to dark mode" [ref=e36] [cursor=pointer]
+          - generic [aria-hidden] [ref=e37]: UCT
+        - generic [aria-hidden] [ref=e38]: DESIGNER
+      - paragraph [ref=e39]:
+        - text: Currently designing
+        - strong [ref=e40]: complex B2B workflows
+        - text: and a multi-brand
+        - strong [ref=e41]: design system
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - generic [ref=e83]: What I do
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - paragraph [ref=e87]: 0 → 1 flows, end to end
+            - heading "Product Design" [level=4] [ref=e88]
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: tokens, components, docs
+            - heading "Design Systems" [level=4] [ref=e91]
+          - generic [ref=e92]:
+            - paragraph [ref=e93]: motion & interaction
+            - heading "Prototyping" [level=4] [ref=e94]
+          - generic [ref=e95]:
+            - paragraph [ref=e96]: testing & synthesis
+            - heading "User Research" [level=4] [ref=e97]
+          - generic [ref=e98]:
+            - paragraph [ref=e99]: React, ships to prod
+            - heading "Frontend" [level=4] [ref=e100]
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: vision & roadmaps
+            - heading "Strategy" [level=4] [ref=e103]
+      - paragraph [ref=e104]:
+        - generic [ref=e105]: My
+        - generic [ref=e106]: work
+        - generic [ref=e107]: spans
+        - generic [ref=e108]: UX/UI,
+        - generic [ref=e109]: design
+        - generic [ref=e110]: systems,
+        - generic [ref=e111]: visual
+        - generic [ref=e112]: direction,and
+        - generic [ref=e113]: AI-assisted
+        - generic [ref=e114]: development,
+        - generic [ref=e115]: transforming
+        - generic [ref=e116]: complex
+        - generic [ref=e117]: problems
+        - generic [ref=e118]: into
+        - generic [ref=e119]: products
+        - generic [ref=e120]: that
+        - generic [ref=e121]: are
+        - generic [ref=e122]: intuitive,scalable,
+        - generic [ref=e123]: and
+        - generic [ref=e124]: commercially
+        - generic [ref=e125]: effective.
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]: Selected Works
+          - heading "Case Studies" [level=2] [ref=e130]
+        - paragraph [ref=e131]: Where high-end aesthetics meet conversion-focused UX. Explore how I turn ambitious ideas into scalable, revenue-generating digital products.
+        - generic [ref=e132]: UX/UI
+      - separator [ref=e134]
+      - generic [ref=e135]:
+        - 'link "Nearpays: Financial infra for SMBs" [ref=e136] [cursor=pointer]':
+          - /url: /work/nearpays
+        - 'link "Betaling: Cross-border infra for Africa trade" [ref=e144] [cursor=pointer]':
+          - /url: /work/betaling
+        - generic [ref=e152]:
+          - generic [ref=e153]: Coming soon
+          - generic [ref=e156]: "Monra: Embedded FinOps for B2BSaaS"
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - paragraph [ref=e161]: About me
+        - heading "Senior Product Designer with 6 years at the intersection of product, design, and engineering." [level=2] [ref=e162]
+        - generic [ref=e163]:
+          - generic [ref=e164]: Problem solver
+          - generic [ref=e165]: Creative thinker
+          - generic [ref=e166]: Systems thinker
+          - generic [ref=e167]: Detail obsessed
+        - paragraph [ref=e169]: I simplify complex B2B SaaS and fintech products into clear, intuitive systems. My approach blends research, strategy, and execution to turn complexity into thoughtful, scalable solutions. I’m known for my attention to detail and minimalist approach, and I care about building products that genuinely improve people’s lives. Outside of design, I enjoy spending time with family, learning new skills, and exploring creative hobbies.
+      - figure "Grace Daniyan" [ref=e172]:
+        - img "Grace Daniyan" [ref=e176]
+    - generic [ref=e178]:
+      - generic [ref=e179]:
+        - paragraph [ref=e180]: Work Experience
+        - heading "The Journey So Far" [level=2] [ref=e181]
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - text: Aug 2024
+            - generic [ref=e186]: –
+            - generic [ref=e187]: Present
+          - article [ref=e190]:
+            - generic [ref=e191]:
+              - img "Nearpays logo" [ref=e192]
+              - generic [ref=e193]:
+                - heading "Nearpays" [level=3] [ref=e194]
+                - paragraph [ref=e195]: Lead Product Designer
+            - paragraph [ref=e196]: Leading product strategy and design across SoftPOS, Business OS, and core AI-powered payment infra that has helped African SMEs accept and manage payments at scale, contributing to numerous global recognitions and $206k in revenue.
+            - generic [ref=e197]:
+              - generic [ref=e198]: Product Strategy
+              - generic [ref=e199]: UX Design
+              - generic [ref=e200]: Design Systems
+              - generic [ref=e201]: Leadership
+        - generic [ref=e202]:
+          - article [ref=e203]:
+            - generic [ref=e204]:
+              - img "Betaling logo" [ref=e205]
+              - generic [ref=e206]:
+                - heading "Betaling" [level=3] [ref=e207]
+                - paragraph [ref=e208]: Product Designer
+            - paragraph [ref=e209]: Designed core product experiences for the platform, transforming complex cross-border workflows into intuitive systems that helped scale the product to 2,000+ users and 3,000+ successful trade matches in its first year.
+            - generic [ref=e210]:
+              - generic [ref=e211]: Cross-border payments
+              - generic [ref=e212]: Operations
+              - generic [ref=e213]: FX & treasury
+              - generic [ref=e214]: Systems Thinking
+          - generic [ref=e217]:
+            - text: Mar 2023
+            - generic [ref=e218]: –
+            - generic [ref=e219]: Jul 2024
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - text: Jan 2021
+            - generic [ref=e222]: –
+            - generic [ref=e223]: Feb 2023
+          - article [ref=e226]:
+            - generic [ref=e227]:
+              - img "Yebox logo" [ref=e228]
+              - generic [ref=e229]:
+                - heading "Yebox" [level=3] [ref=e230]
+                - paragraph [ref=e231]: UX/UI Designer
+            - paragraph [ref=e232]: Owned end-to-end product design across 5+ client projects spanning fintech, e-commerce, and edtech, working directly with stakeholders and developers and contributing to a 40% client retention and repeat-engagement rate.
+            - generic [ref=e233]:
+              - generic [ref=e234]: Product Design
+              - generic [ref=e235]: Design Agency
+              - generic [ref=e236]: Craft
+        - generic [ref=e237]:
+          - article [ref=e238]:
+            - generic [ref=e239]:
+              - img "Reventify logo" [ref=e240]
+              - generic [ref=e241]:
+                - heading "Reventify" [level=3] [ref=e242]
+                - paragraph [ref=e243]: UX Design Intern
+            - paragraph [ref=e244]: Redesigned key screens in the CV builder flow, improving usability for job seekers by 42%, and designed 50+ core screens and user flows across the job board and application-tracking tools.
+            - generic [ref=e245]:
+              - generic [ref=e246]: Product Design
+              - generic [ref=e247]: UX
+              - generic [ref=e248]: Interaction Design
+          - generic [ref=e251]:
+            - text: Jun 2020
+            - generic [ref=e252]: –
+            - generic [ref=e253]: Nov 2020
+    - generic [ref=e254]:
+      - heading "Feedback from some amazing clients" [level=2] [ref=e256]
+      - generic [ref=e260]:
+        - button "Previous feedback" [ref=e261]
+        - button "Next feedback" [ref=e264]
+        - generic [ref=e267]:
+          - figure "Founder · EAC" [ref=e269]:
+            - blockquote [ref=e270]: “What stood out most about Grace was her attention to detail and ability to balance user needs with business goals. She designs with purpose and thinks deeply about the experience.”
+          - figure "CEO · Tranzypay" [ref=e272]:
+            - blockquote [ref=e273]: “Grace has an ability to take complex ideas and turn them into interfaces that feel simple and purposeful. She brings both creativity and strong product thinking to every project.”
+          - figure "Staff Engineer · Glown" [ref=e275]:
+            - blockquote [ref=e276]: “She thinks in systems and ships with craft, one of the sharpest design minds I’ve collaborated with across teams.”
+    - generic [ref=e280]:
+      - generic [ref=e281]:
+        - heading "Let’s build something incredible" [level=2] [ref=e291]:
+          - text: Let’s
+          - generic [ref=e294]:
+            - text: build
+            - generic [ref=e295]: build
+          - text: something incredible
+        - generic [ref=e296]:
+          - generic [ref=e297]:
+            - link "elohodaniyan@gmail.com" [ref=e298] [cursor=pointer]:
+              - /url: mailto:elohodaniyan@gmail.com
+            - generic [ref=e300]:
+              - link "LinkedIn" [ref=e301] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/graceakpoiroro/
+              - link "X (twitter)" [ref=e304] [cursor=pointer]:
+                - /url: https://x.com/minimalist_quin?s=11
+                - generic [aria-hidden] [ref=e305]: 𝕏
+              - link "Dribbble" [ref=e306] [cursor=pointer]:
+                - /url: https://dribbble.com/grace-daniyan
+          - link "Get in touch" [ref=e310] [cursor=pointer]:
+            - /url: mailto:elohodaniyan@gmail.com
+            - img [aria-hidden] [ref=e311]:
+              - generic [ref=e312]: GET IN TOUCH • GET IN TOUCH •
+          - paragraph [ref=e316]: Ready to discuss your project? I’d love to hear about it.
+      - generic [ref=e318]:
+        - generic [ref=e319]: © 2026 Grace Daniyan.
+        - generic [ref=e320]: Built with love by me
