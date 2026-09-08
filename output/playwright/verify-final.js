@@ -1,0 +1,31 @@
+async (page) => {
+  const report = {};
+  report.mobile = await page.evaluate(() => ({width:innerWidth, scrollWidth:document.documentElement.scrollWidth, physics:document.querySelector('.pe-playground').className, stickers:Array.from(document.querySelectorAll('.pe-sticker')).slice(0,2).map(el => ({top:el.getBoundingClientRect().top,transform:el.style.transform}))}));
+  await page.getByRole('switch').click();
+  if (await page.getByRole('switch').getAttribute('aria-checked') !== 'true') throw Error('Theme did not switch');
+  await page.reload();
+  if (await page.getByRole('switch').getAttribute('aria-checked') !== 'true') throw Error('Theme did not persist');
+  await page.getByRole('switch').click();
+  await page.getByRole('button',{name:'Data analysis',exact:true}).click();
+  report.dataProjects = await page.locator('.pe-project').count();
+  await page.locator('.pe-project').first().click();
+  await page.getByRole('heading',{name:'Sales Performance Dashboard',exact:true}).waitFor();
+  report.dataDetail = page.url();
+  await page.getByRole('button',{name:'Back to Projects'}).click();
+  await page.locator('.pe-project').first().click();
+  await page.getByRole('link',{name:'Visit live website'}).waitFor();
+  report.liveLink = await page.getByRole('link',{name:'Visit live website'}).getAttribute('href');
+  await page.goto('http://127.0.0.1:8081/');
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.setViewportSize({width:390,height:844});
+  await page.reload();
+  await page.locator('.pe-gallery.is-static').waitFor();
+  report.reducedMotion = await page.evaluate(() => ({physics:document.querySelector('.pe-playground').className, width:innerWidth, scrollWidth:document.documentElement.scrollWidth, animations:document.getAnimations().length}));
+  await page.screenshot({path:'output/playwright/portfolio-reduced-motion.png',fullPage:true});
+  await page.setViewportSize({width:1280,height:800});
+  await page.screenshot({path:'output/playwright/portfolio-full-desktop.png',fullPage:true});
+  report.assets = await page.evaluate(() => Array.from(document.images).filter(img => !img.complete || img.naturalWidth === 0).map(img => img.src));
+  report.resumeStatus = (await page.request.get('http://127.0.0.1:8081/Ekene_Okoli_Resume.pdf')).status();
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  return report;
+}
