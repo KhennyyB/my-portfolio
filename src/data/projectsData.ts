@@ -170,7 +170,7 @@ export const webDevelopmentProjects = [
   },
   {
     id: "lagoon-hospitals",
-    title: "Lagoon Hospitals – Healthcare Website",
+    title: "Lagoon Hospitals – Website Redesign",
     description: "A professional multi-page website for Iwosan Lagoon Hospitals featuring appointment booking, service listings, facility showcases, and career pages. Built with a clean, modern design focused on trust and accessibility for a world-class healthcare provider.",
     tools: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
     icon: HeartPulse,
@@ -199,38 +199,6 @@ export const webDevelopmentProjects = [
     metric: { icon: Globe, value: "Live", label: "" },
     liveUrl: "https://localdriveapp.com",
     image: "/projects/localdrive-preview.png",
-  },
-  {
-    id: "magverse-landing",
-    title: "MagVerse – Metaverse Landing Page",
-    description: "A visually striking landing page for a metaverse/gaming platform featuring bold dark-themed UI, animated hero section, and feature highlights for interoperability, security, and stability. Built with clean HTML, CSS, and JavaScript.",
-    tools: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
-    icon: Gamepad2,
-    color: "from-purple-600 to-violet-700",
-    insights: [
-      "Eye-catching dark-themed design",
-      "Smooth animations & transitions",
-      "Clear feature presentation layout"
-    ],
-    metric: { icon: Globe, value: "Live", label: "" },
-    liveUrl: "https://magverse.netlify.app/",
-    image: "/projects/magverse-preview.png",
-  },
-  {
-    id: "eduford-landing-page",
-    title: "Eduford – School of Programming",
-    description: "A responsive landing page for an educational institution offering courses in Frontend Engineering, Backend Engineering, and Cloud Engineering. Features course listings, global campus showcase, student testimonials, and a clean, professional design.",
-    tools: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    icon: GraduationCap,
-    color: "from-blue-700 to-indigo-800",
-    insights: [
-      "Clean, professional educational layout",
-      "Multi-section responsive design",
-      "Course & campus showcase"
-    ],
-    metric: { icon: Globe, value: "Live", label: "" },
-    liveUrl: "https://khennyyb.github.io/Eduford_landing_page/",
-    image: "/projects/eduford-preview.png",
   },
 ];
 

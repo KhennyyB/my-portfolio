@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Download } from "lucide-react";
 import { projects, projectDetailData } from "@/data/projectsData";
 import { exportProjectData } from "@/utils/exportProject";
 import { useHashScroll } from "@/hooks/useHashScroll";
@@ -63,12 +63,19 @@ const ProjectDetail = () => {
       case "patient-monitoring-dashboard":
         return <PatientMonitoringDetail data={data as any} />;
       default:
-        return null;
+        return "image" in project && typeof project.image === "string" && "liveUrl" in project && typeof project.liveUrl === "string" ? (
+          <div className="space-y-8">
+            <img src={project.image} alt={`${project.title} website preview`} className="w-full rounded-2xl border border-border shadow-lg" />
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3">
+              Visit live website <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        ) : null;
     }
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="portfolio-detail min-h-screen bg-background">
       <Helmet>
         <title>{project.title} | Ekene Okoli Portfolio</title>
         <meta name="description" content={project.description} />
@@ -90,7 +97,7 @@ const ProjectDetail = () => {
               <span className="text-sm text-muted-foreground font-mono hidden md:block">
                 {project.tools.join(" • ")}
               </span>
-              <Button
+              {data && <Button
                 variant="outline"
                 size="sm"
                 onClick={() => exportProjectData(project.id, project.title)}
@@ -98,7 +105,7 @@ const ProjectDetail = () => {
               >
                 <Download className="w-4 h-4" />
                 Export Data
-              </Button>
+              </Button>}
             </div>
           </div>
         </div>

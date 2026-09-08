@@ -1,16 +1,7 @@
-import React, { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
+import PortfolioExperience from "@/components/PortfolioExperience";
 import CookieConsent from "@/components/CookieConsent";
-import LoadingBlock from "@/components/LoadingBlock";
 import { useHashScroll } from "@/hooks/useHashScroll";
-
-const AboutSection = lazy(() => import("@/components/AboutSection"));
-const SkillsSection = lazy(() => import("@/components/SkillsSection"));
-const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
 
 const Index = () => {
   useHashScroll();
@@ -18,48 +9,24 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Ekene Okoli | Data Analyst - Excel, SQL, Power BI Expert</title>
+        <title>Ekene Okoli | Data Analyst & Frontend Developer</title>
         <meta
           name="description"
-          content="Ekene Okoli is a Data Analyst & Frontend Developer with 3+ years of experience in Excel, SQL, Power BI, React, and TypeScript."
+          content="Ekene Okoli is a Data Analyst & Frontend Developer with 4+ years of experience in Excel, SQL, Power BI, React, and TypeScript."
         />
         <meta name="keywords" content="Data Analyst, Frontend Developer, Excel, SQL, Power BI, React, TypeScript, Tailwind CSS, Lagos, Nigeria" />
         <meta name="author" content="Ekene Okoli" />
-        <meta property="og:title" content="Ekene Okoli | Data Analyst Portfolio" />
-        <meta property="og:description" content="Data Analyst with expertise in Excel, SQL, and Power BI. Transforming complex data into actionable business insights." />
+        <meta property="og:title" content="Ekene Okoli | Data Analysis & Frontend Development Portfolio" />
+        <meta property="og:description" content="Data Analyst & Frontend Developer bridging the gap between complex data and user-focused web applications. Expert in SQL, Power BI, React, and TypeScript." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ekene Okoli | Data Analyst" />
-        <meta name="twitter:description" content="Data Analyst with expertise in Excel, SQL, and Power BI." />
-        <link rel="canonical" href="https://ekene.dev" />
+        <meta name="twitter:title" content="Ekene Okoli | Data Analyst & Frontend Developer" />
+        <meta name="twitter:description" content="Data Analyst & Frontend Developer bridging the gap between complex data and user-focused web applications. Expert in SQL, Power BI, React, and TypeScript." />
+        <link rel="canonical" href="https://ekene-dev.com" />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
-        <Navbar />
-
-        <main>
-          <HeroSection />
-
-          <Suspense fallback={<LoadingBlock label="Loading about…" />}>
-            <AboutSection />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock label="Loading skills…" />}>
-            <SkillsSection />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock label="Loading projects…" />}>
-            <ProjectsSection />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock label="Loading contact…" />}>
-            <ContactSection />
-          </Suspense>
-        </main>
-
-        <Footer />
-        <CookieConsent />
-      </div>
+      <PortfolioExperience />
+      <CookieConsent />
     </>
   );
 };

@@ -47,7 +47,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-secondary/20 relative">
+    <section id="contact-form" className="py-20 md:py-28 bg-secondary/20 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header — right-aligned for contrast with About */}
