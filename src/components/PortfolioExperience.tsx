@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { ArrowDown, ArrowUpRight, BarChart3, Code2, Database, FileText, Folder, Github, Linkedin, Mail, Moon, Pause, Play, Smile, Sparkles, Sun } from "lucide-react";
 import Lenis from "lenis";
+import FooterEyes from "./FooterEyes";
+import CountUp from "./CountUp";
 import { dataAnalysisProjects, webDevelopmentProjects } from "@/data/projectsData";
 import "./portfolio-experience.css";
 
-const ContactSection = lazy(() => import("./ContactSection"));
+const ContactModal = lazy(() => import("./ContactModal"));
 const email = "mailto:khennyphresh@gmail.com";
 const colors = ["#f9c9de", "#8fd0ff", "#ffac88", "#b7ebcf", "#c7b6ff", "#c6ef63"];
 const skills = ["Data analysis", "SQL", "Power BI", "React", "TypeScript", "Excel", "Storytelling", "Dashboards", "Problem solving", "Web development", "Data validation"];
@@ -44,7 +46,7 @@ function StickerPlayground({ reduced }: { reduced: boolean }) {
       let height = container.clientHeight;
       const walls = [Bodies.rectangle(width / 2, height + 100, width * 3, 200, { isStatic: true }), Bodies.rectangle(-100, height / 2, 200, height * 6, { isStatic: true }), Bodies.rectangle(width + 100, height / 2, 200, height * 6, { isStatic: true })];
       const bodies = stickers.map((el, i) => {
-        const body = Bodies.rectangle(Math.max(el.offsetWidth / 2, (i + .5) / stickers.length * width), -80 - i * 55, el.offsetWidth, el.offsetHeight, { chamfer: { radius: el.offsetHeight / 2 }, restitution: .45, friction: .35, frictionAir: .02 });
+        const body = Bodies.rectangle(Math.max(el.offsetWidth / 2, (i + .5) / stickers.length * width), -80 - i * 55, el.offsetWidth, el.offsetHeight, { chamfer: { radius: el.offsetHeight / 2 }, restitution: .6, friction: .35, frictionAir: .02 });
         Body.setAngle(body, Math.sin(i * 7) * .3);
         return body;
       });
@@ -170,47 +172,31 @@ export default function PortfolioExperience() {
   const { resolvedTheme, setTheme } = useTheme();
   const dark = resolvedTheme === "dark";
   const root = useRef<HTMLDivElement>(null);
+  const smoothScroll = useRef<Lenis | null>(null);
+  const contactOpener = useRef<HTMLElement | null>(null);
   const [filter, setFilter] = useState("Web development");
-  const [contactOpen, setContactOpen] = useState(() => window.location.hash === "#contact-form-panel");
+  const [contactOpen, setContactOpen] = useState(false);
   const openContactForm = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    // Let the form render before scrolling, instead of Lenis handling a hidden anchor.
     event.stopPropagation();
+    contactOpener.current = event.currentTarget;
     setContactOpen(true);
-    window.history.replaceState(window.history.state, "", "#contact-form-panel");
-    requestAnimationFrame(() => {
-      const panel = document.getElementById("contact-form-panel");
-      (panel?.querySelector("form") ?? panel)?.scrollIntoView({
-        behavior: reduced ? "instant" : "smooth", block: "start",
-      });
-    });
   };
   const [word, setWord] = useState(0);
-  useEffect(() => {
-    if (!contactOpen) return;
-    const panel = document.getElementById("contact-form-panel");
-    if (!panel) return;
-    const revealLoadedForm = () => {
-      const input = panel.querySelector<HTMLInputElement>("form input");
-      if (!input) return;
-      input.form?.scrollIntoView({ behavior: reduced ? "instant" : "smooth", block: "start" });
-      input.focus({ preventScroll: true });
-      observer.disconnect();
-    };
-    const observer = new MutationObserver(revealLoadedForm);
-    observer.observe(panel, { childList: true, subtree: true });
-    revealLoadedForm();
-    return () => observer.disconnect();
-  }, [contactOpen, reduced]);
   useEffect(() => {
     if (reduced) return;
     const timer = window.setInterval(() => setWord(value => (value + 1) % 3), 2200);
     const lenis = new Lenis({ duration: 1.1, smoothWheel: true, anchors: { offset: -100 } });
+    smoothScroll.current = lenis;
     let frame = 0;
     const tick = (time: number) => { lenis.raf(time); frame = requestAnimationFrame(tick); };
     frame = requestAnimationFrame(tick);
-    return () => { clearInterval(timer); cancelAnimationFrame(frame); lenis.destroy(); };
+    return () => { clearInterval(timer); cancelAnimationFrame(frame); lenis.destroy(); smoothScroll.current = null; };
   }, [reduced]);
+  useEffect(() => {
+    if (contactOpen) smoothScroll.current?.stop();
+    else smoothScroll.current?.start();
+  }, [contactOpen, reduced]);
   useEffect(() => {
     const words = Array.from(root.current?.querySelectorAll<HTMLElement>(".pe-word") ?? []);
     let frame = 0;
@@ -236,16 +222,17 @@ export default function PortfolioExperience() {
   const statement = "My work spans across data analysis, business intelligence, and frontend development, transforming complex problems into clear insights and intuitive, accessible digital experiences.";
   return <div className="portfolio-experience" ref={root}>
     <a className="pe-skip" href="#work">Skip to projects</a>
-    <header className="pe-nav"><nav aria-label="Main navigation"><a href="#top" className="pe-monogram" aria-label="Ekene Okoli, back to top">eo.</a><a href="#work"><Folder />Work</a><a href="#about"><Smile />About</a><a href="/Ekene_Okoli_Resume.pdf" target="_blank" rel="noreferrer"><FileText />Resume</a><a href="#contact-form-panel" onClick={openContactForm} className="pe-nav-contact" aria-label="Get in touch" aria-expanded={contactOpen} aria-controls="contact-form-panel"><span>Get in Touch</span><Mail /></a></nav></header>
+    <header className="pe-nav"><nav aria-label="Main navigation"><a href="/" className="pe-monogram" aria-label="Ekene Okoli home">EO</a><a href="#work"><Folder />Work</a><a href="#about"><Smile />About</a><a href="/Ekene_Okoli_Resume.pdf" target="_blank" rel="noreferrer"><FileText />Resume</a><button type="button" onClick={openContactForm} className="pe-nav-contact" aria-label="Get in touch" aria-haspopup="dialog" aria-expanded={contactOpen}><span>Get in Touch</span></button></nav></header>
     <main>
-      <section id="top" className="pe-hero"><div className="pe-guides" aria-hidden="true"><i /><i /><i /></div><div className="pe-hero-content"><p className="pe-greeting">Hey, I’m <img src="/headshot.png" alt="" /> Ekene</p><h1 aria-label="Creative data analyst and frontend developer"><span>Creative</span><span className="pe-orange">Devel<button className="pe-theme-switch" role="switch" aria-checked={dark} aria-label={`Switch to ${dark ? "light" : "dark"} mode`} onClick={() => setTheme(dark ? "light" : "dark")}><span>{dark ? <Moon /> : <Sun />}</span></button>per &</span><span>Data analyst</span></h1><p className="pe-hero-description">Turning complex data into <strong>clear business insights</strong><br className="pe-desktop-break" /> and building <strong>interfaces people love to use.</strong></p></div><StickerPlayground reduced={reduced} /></section>
+      <section id="top" className="pe-hero"><div className="pe-guides" aria-hidden="true"><i /><i /><i /></div><div className="pe-hero-content"><p className="pe-greeting">Hey, I’m <img src="/headshot.png" alt="" /> Ekene</p><h1 aria-label="Creative data analyst and frontend developer"><span>Creative</span><span className="pe-accent">Devel<button className="pe-theme-switch" role="switch" aria-checked={dark} aria-label={`Switch to ${dark ? "light" : "dark"} mode`} onClick={() => setTheme(dark ? "light" : "dark")}><span>{dark ? <Moon /> : <Sun />}</span></button>per &</span><span>Data analyst</span></h1><p className="pe-hero-description">Turning complex data into <strong>clear business insights</strong><br className="pe-desktop-break" /> and building <strong>interfaces people love to use.</strong></p></div><StickerPlayground reduced={reduced} /></section>
       <ProjectGallery reduced={reduced} />
       <section className="pe-container pe-services" aria-labelledby="services-heading"><div><h2 id="services-heading" className="pe-service-label">What I do</h2><div className="pe-service-stack">{services.map(([caption, title], i) => <div key={title} className={`pe-service-card pe-service-${i}`} style={{ background: colors[i] }}><small>{caption}</small><h3>{title}</h3></div>)}</div></div><p className="pe-statement">{statement.split(" ").map((text, i) => <span key={i}><span className="pe-word">{text}</span>{" "}</span>)}</p></section>
       <section id="work" className="pe-container pe-work"><span id="projects" className="pe-anchor" /><div className="pe-work-heading pe-reveal"><div><p className="pe-eyebrow">Selected works</p><h2>Case studies</h2></div><p>A selection of the dashboards, platforms, and digital experiences I’ve built. Explore the thinking and work behind each project.</p></div><div className="pe-filters" aria-label="Project categories">{["Web development", "Data analysis"].map(label => <button key={label} aria-pressed={filter === label} onClick={() => setFilter(label)}>{label}</button>)}</div><div className="pe-project-grid">{selected.map((project, i) => <Link className="pe-project pe-reveal" to={`/project/${project.id}`} key={project.id}><div className="pe-project-image" style={{ "--tone": colors[i % colors.length] } as CSSProperties}>{"image" in project ? <img src={project.image as string} alt={`${project.title} website`} loading="lazy" /> : <div className="pe-data-preview"><div className="pe-dashboard-top"><project.icon /><span>{project.tools[0]} / ANALYTICS</span></div><strong>{project.metric.value}</strong><span>{project.metric.label}</span><div className="pe-bars" aria-hidden="true">{[42, 65, 48, 80, 62, 93, 75, 100].map((height, j) => <i key={j} style={{ height: `${Math.max(20, height - (i * 7 + j * 3) % 28)}%` }} />)}</div></div>}<span className="pe-project-view">View project <ArrowUpRight /></span></div><div className="pe-project-caption"><h3>{project.title}</h3><ArrowUpRight /></div><p>{project.tools.slice(0, 3).join(" · ")}</p></Link>)}</div></section>
       <section id="about" className="pe-container pe-about pe-reveal"><div><p className="pe-eyebrow">About me</p><h2>Data analyst & frontend developer with <em>4+ years</em> at the intersection of data, business, and technology.</h2><div className="pe-personality">{["Problem solver", "Creative thinker", "Systems thinker", "Detail obsessed"].map((label, i) => <span key={label} style={{ background: colors[(i + 4) % colors.length] }}>{label}</span>)}</div><p className="pe-bio">I’m Ekene Okoli, a Data Analyst and Frontend Developer specializing in the intersection of data engineering and interactive UI design. With deep expertise in SQL, Power BI, React, and TypeScript, I build data-driven web applications that make complex metrics easy to understand. My focus is delivering scalable technical solutions that turn raw data into clear, actionable business strategies.</p><a className="pe-text-link" href="/Ekene_Okoli_Resume.pdf" target="_blank" rel="noreferrer">More about my experience <ArrowUpRight /></a></div><figure className="pe-polaroid"><span /><span /><img src="/headshot.png" alt="Ekene Okoli" loading="lazy" /><figcaption>Ekene Okoli / Lagos, Nigeria</figcaption></figure></section>
       <Expertise reduced={reduced} />
-      <section className="pe-container pe-impact pe-reveal"><p className="pe-eyebrow">The work, in numbers</p><h2>Thoughtful work.<br /><em>Real impact.</em></h2><div className="pe-impact-grid">{[["4+", "Years of experience"], ["15+", "Projects delivered"], ["15%", "Operational efficiency increase"]].map(([value, label]) => <div key={label}><strong>{value}</strong><p>{label}</p></div>)}</div></section>
-      <footer id="contact" className="pe-container pe-footer"><p className="pe-eyebrow">Have something in mind?</p><h2>Let’s make<br /><span className="pe-changing-word" key={reduced ? "static" : word}>{["great", "useful", "better"][reduced ? 0 : word]}</span> things<span className="pe-orange">.</span></h2><div className="pe-footer-row"><div><a className="pe-email" href={email}>khennyphresh@gmail.com <ArrowUpRight /></a><div className="pe-socials"><a href="https://linkedin.com/in/ekene-okoli" aria-label="LinkedIn" target="_blank" rel="noreferrer"><Linkedin /></a><a href="https://github.com/khennyyb" aria-label="GitHub" target="_blank" rel="noreferrer"><Github /></a><button aria-expanded={contactOpen} aria-controls="contact-form-panel" onClick={openContactForm}>Send a message <Mail /></button></div></div><a href="#contact-form-panel" onClick={openContactForm} className="pe-touch-ring" aria-label="Get in touch" aria-expanded={contactOpen} aria-controls="contact-form-panel"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="pe-ring" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" /></defs><text textLength="232" lengthAdjust="spacing"><textPath href="#pe-ring"> GET IN TOUCH • GET IN TOUCH • </textPath></text></svg><span><ArrowUpRight /></span></a><p className="pe-footer-note">Ready to discuss your project?<br />I’d <em>love</em> to <em>hear</em> about it.</p></div><div id="contact-form-panel" hidden={!contactOpen}>{contactOpen && <Suspense fallback={<p>Loading contact form…</p>}><ContactSection /></Suspense>}</div><div className="pe-footer-bottom"><span>© {new Date().getFullYear()} Ekene Okoli.</span><span>All rights reserved</span><a href="#top">Back to top <ArrowDown /></a></div></footer>
+      <section className="pe-container pe-impact pe-reveal"><p className="pe-eyebrow">The work, in numbers</p><h2>Thoughtful work.<br /><em>Real impact.</em></h2><div className="pe-impact-grid">{[["4+", "Years of experience"], ["15+", "Projects delivered"], ["15%", "Operational efficiency increase"]].map(([value, label]) => <div key={label}><CountUp value={value} reduced={reduced} /><p>{label}</p></div>)}</div></section>
+      <footer id="contact" className="pe-container pe-footer"><p className="pe-eyebrow">Have something in mind?</p><h2>Let’s make<br /><span className="pe-changing-word" key={reduced ? "static" : word}>{["great", "useful", "better"][reduced ? 0 : word]}</span> things<span className="pe-accent">.</span></h2><FooterEyes reduced={reduced} /><div className="pe-footer-row"><div><a className="pe-email" href={email}>khennyphresh@gmail.com <ArrowUpRight /></a><div className="pe-socials"><a href="https://linkedin.com/in/ekene-okoli" aria-label="LinkedIn" target="_blank" rel="noreferrer"><Linkedin /></a><a href="https://github.com/khennyyb" aria-label="GitHub" target="_blank" rel="noreferrer"><Github /></a><a href={email} aria-label="Open email app"><Mail /></a></div></div><a href="#contact" onClick={openContactForm} className="pe-touch-ring" aria-label="Get in touch" aria-expanded={contactOpen} aria-haspopup="dialog"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="pe-ring" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" /></defs><text textLength="232" lengthAdjust="spacing"><textPath href="#pe-ring"> GET IN TOUCH • GET IN TOUCH • </textPath></text></svg><span><ArrowUpRight /></span></a><p className="pe-footer-note">Ready to discuss your project?<br />I’d <em>love</em> to <em>hear</em> about it.</p></div><div className="pe-footer-bottom"><span>© {new Date().getFullYear()} Ekene Okoli.</span><span>All rights reserved</span><a href="#top">Back to top <ArrowDown /></a></div></footer>
     </main>
+    <Suspense fallback={null}><ContactModal open={contactOpen} onOpenChange={setContactOpen} returnFocus={() => contactOpener.current?.focus({ preventScroll: true })} /></Suspense>
   </div>;
 }

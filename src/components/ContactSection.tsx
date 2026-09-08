@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Mail, Linkedin, MapPin, Send, Loader2 } from "lucide-react";
 
-const ContactSection = () => {
+const ContactSection = ({ compact = false }: { compact?: boolean }) => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -51,7 +51,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header — right-aligned for contrast with About */}
-          <div className="mb-14 max-w-lg ml-auto text-right">
+          <div className={compact ? "hidden" : "mb-14 max-w-lg ml-auto text-right"}>
             <p className="text-primary font-mono text-xs tracking-wider uppercase mb-3">Contact</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
               Let's talk
@@ -62,9 +62,9 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8">
+          <div className={compact ? "block" : "grid lg:grid-cols-5 gap-8"}>
             {/* Contact Info */}
-            <div className="lg:col-span-2 space-y-4">
+            <div className={compact ? "hidden" : "lg:col-span-2 space-y-4"}>
               <h3 className="text-base font-semibold text-foreground mb-4">Reach me at</h3>
 
               {contactInfo.map((info, index) => (
