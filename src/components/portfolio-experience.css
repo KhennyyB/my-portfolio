@@ -103,7 +103,7 @@
 /* Full-hero physics: only the stickers receive pointer input over the content. */
 .pe-hero{min-height:100svh}
 .pe-hero-content{padding-bottom:240px;flex:1}
-@media(min-width:640px){.pe-hero{min-height:0}.pe-hero-content{padding-bottom:140px;flex:none}}
+@media(min-width:640px){.pe-hero{min-height:0}.pe-hero-content{padding-bottom:250px;flex:none}}
 .pe-hero .pe-playground{position:absolute;inset:0;height:100%;min-height:0;pointer-events:none;padding:0}
 .pe-playground .pe-sticker{pointer-events:auto}
 .pe-nav .pe-monogram{letter-spacing:-.07em}
