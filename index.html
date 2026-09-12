@@ -9,6 +9,7 @@
     <meta name="keywords" content="Data Analyst, Frontend Developer, Excel, SQL, Power BI, React, TypeScript, Tailwind CSS, Data Visualization, Business Intelligence, Web Development, Lagos, Nigeria, Ekene Okoli" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ekene-dev.com/" />
+    <link rel="describedby" href="/llms.txt" type="text/plain" />
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/png">
@@ -82,7 +83,21 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <!-- Initial homepage content for crawlers and visitors before React loads.
+         createRoot replaces this content with App, retaining one primary H1. -->
+    <div id="root">
+      <div class="portfolio-experience">
+        <main>
+          <section class="pe-hero">
+            <div class="pe-hero-content">
+              <p class="pe-greeting">Hey, I’m Ekene</p>
+              <h1><span>Frontend</span> <span class="pe-accent">Developer &amp;</span> <span>Data Analyst</span></h1>
+              <p class="pe-hero-description">Turning complex data into <strong>clear business insights</strong><br class="pe-desktop-break" /> and building <strong>interfaces people love to use.</strong></p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

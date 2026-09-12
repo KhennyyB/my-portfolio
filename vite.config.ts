@@ -26,6 +26,36 @@ function sitemapPlugin(): Plugin {
         fileName: "sitemap.xml",
         source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`,
       });
+
+      // Keep the AI-readable overview in sync with the public project catalog.
+      const projectLinks = projects.map(({ id, title, description, tools }) =>
+        `- [${title}](https://ekene-dev.com/project/${encodeURIComponent(id)}): ${description} Tools: ${tools.join(", ")}.`
+      );
+      this.emitFile({
+        type: "asset",
+        fileName: "llms.txt",
+        source: [
+          "# Ekene Okoli Portfolio",
+          "",
+          "> Ekene Okoli is a Data Analyst and Frontend Developer based in Lagos, Nigeria, turning complex data into clear business insights and building user-focused web applications.",
+          "",
+          "Expertise includes Excel, SQL, Power BI, React, TypeScript, and Tailwind CSS. This is a personal portfolio showcasing data analysis and web development projects.",
+          "",
+          "## Portfolio",
+          "",
+          "- [Homepage](https://ekene-dev.com/): About Ekene, selected work, experience, and contact information.",
+          "",
+          "## Projects",
+          "",
+          ...projectLinks,
+          "",
+          "## Profiles",
+          "",
+          "- [LinkedIn](https://linkedin.com/in/ekene-okoli): Ekene Okoli's professional profile.",
+          "- [GitHub](https://github.com/khennyyb): Ekene Okoli's code repositories.",
+          "",
+        ].join("\n"),
+      });
     },
   };
 }
