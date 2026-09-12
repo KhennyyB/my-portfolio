@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { fileURLToPath } from "url";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { projects } from "./src/data/projectsData";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,7 +14,7 @@ function sitemapPlugin(): Plugin {
     name: "portfolio-sitemap",
     apply: "build",
     generateBundle() {
-      const routes = ["/", ...projects.map(({ id }) => `/project/${encodeURIComponent(id)}`)];
+      const routes = ["/", ...projects.map(({ id }) => `/project/${encodeURIComponent(id)}/`)];
       const escapeXml = (value: string) => value.replace(/[<>&"']/g, (character) => ({
         "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&apos;",
       })[character]!);
@@ -29,7 +30,7 @@ function sitemapPlugin(): Plugin {
 
       // Keep the AI-readable overview in sync with the public project catalog.
       const projectLinks = projects.map(({ id, title, description, tools }) =>
-        `- [${title}](https://ekene-dev.com/project/${encodeURIComponent(id)}): ${description} Tools: ${tools.join(", ")}.`
+        `- [${title}](https://ekene-dev.com/project/${encodeURIComponent(id)}/): ${description} Tools: ${tools.join(", ")}.`
       );
       this.emitFile({
         type: "asset",
@@ -57,6 +58,28 @@ function sitemapPlugin(): Plugin {
         ].join("\n"),
       });
     },
+    async writeBundle(options) {
+      const outputDir = options.dir ?? "dist";
+      const template = await readFile(path.join(outputDir, "index.html"), "utf8");
+      const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+      })[character]!);
+      // Real HTML entries give GitHub Pages a 200 response for each public project.
+      for (const project of projects) {
+        if (!/^[a-z0-9-]+$/.test(project.id)) throw new Error(`Invalid project slug: ${project.id}`);
+        const url = `https://ekene-dev.com/project/${project.id}/`;
+        const html = template
+          .replace(/<title>[^<]*<\/title>/, () => `<title>${escapeHtml(project.title)} | Ekene Okoli Portfolio</title>`)
+          .replace(/<meta name="description"[^>]*>/, () => `<meta name="description" content="${escapeHtml(project.description)}" data-rh="true" />`)
+          .replace(/<link rel="canonical"[^>]*>/, () => `<link rel="canonical" href="${url}" data-rh="true" />`)
+          .replace(/<meta property="og:url"[^>]*>/, () => `<meta property="og:url" content="${url}" />`)
+          .replace(/<div id="root">[\s\S]*<\/div>/, () =>
+            `<div id="root"><main class="portfolio-detail min-h-screen bg-background"><div class="container mx-auto px-4 py-12"><a href="/">Ekene Okoli Portfolio</a><h1 class="text-4xl font-bold">${escapeHtml(project.title)}</h1><p>${escapeHtml(project.description)}</p><p>Tools: ${escapeHtml(project.tools.join(", "))}</p></div></main></div>\n`);
+        const directory = path.join(outputDir, "project", project.id);
+        await mkdir(directory, { recursive: true });
+        await writeFile(path.join(directory, "index.html"), html);
+      }
+    },
   };
 }
 
@@ -79,7 +102,6 @@ export default defineConfig(({ mode }) => ({
           const vendorChunks: Record<string, string[]> = {
             'vendor-react': ['react', 'react-dom', 'react-router-dom'],
             'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
-            'vendor-charts': ['recharts'],
             'vendor-excel': ['exceljs'],
             'vendor-utils': ['date-fns', 'clsx', 'tailwind-merge', 'class-variance-authority'],
           };

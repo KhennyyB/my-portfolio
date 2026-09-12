@@ -27,7 +27,7 @@ const Index = () => {
         <meta name="twitter:image:alt" content="Ekene Okoli's dark-mode portfolio hero with lilac typography and colorful resting skill tiles." />
         <meta name="twitter:title" content="Ekene Okoli | Data Analyst & Frontend Developer" />
         <meta name="twitter:description" content="Data Analyst & Frontend Developer bridging the gap between complex data and user-focused web applications. Expert in SQL, Power BI, React, and TypeScript." />
-        <link rel="canonical" href="https://ekene-dev.com" />
+        <link rel="canonical" href="https://ekene-dev.com/" />
       </Helmet>
 
       <PortfolioExperience />

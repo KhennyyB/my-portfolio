@@ -79,6 +79,7 @@ const ProjectDetail = () => {
       <Helmet>
         <title>{project.title} | Ekene Okoli Portfolio</title>
         <meta name="description" content={project.description} />
+        <link rel="canonical" href={`https://ekene-dev.com/project/${encodeURIComponent(project.id)}/`} />
       </Helmet>
 
       {/* Header */}

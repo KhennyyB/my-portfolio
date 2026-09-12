@@ -7,7 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import ProjectDetail from "./pages/ProjectDetail";
+import { lazy, Suspense } from "react";
+
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 
 const queryClient = new QueryClient();
 
@@ -21,7 +23,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/project/:projectId" element={<ProjectDetail />} />
+              <Route path="/project/:projectId" element={<Suspense fallback={<main className="container mx-auto px-4 py-12" role="status">Loading project…</main>}><ProjectDetail /></Suspense>} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
